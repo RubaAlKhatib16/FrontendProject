@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Youth Forms - Quiz Management</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleyouth.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background: #f5f7fa;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      color: white;
+      padding: 25px 0;
+      height: 100vh;
+      position: fixed;
+      transition: all 0.3s;
+    }
+
+    .sidebar h2 {
+      padding: 0 20px 25px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #374151;
+      margin-bottom: 20px;
+    }
+
+    .sidebar h2 i {
+      color: #4f46e5;
+      font-size: 28px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 5px;
+    }
+
+    .sidebar ul li a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      color: #d1d5db;
+      text-decoration: none;
+      transition: all 0.3s;
+      border-left: 3px solid transparent;
+    }
+
+    .sidebar ul li a:hover {
+      background: rgba(79, 70, 229, 0.1);
+      color: white;
+      border-left-color: #4f46e5;
+    }
+
+    .sidebar ul li.active a {
+      background: rgba(79, 70, 229, 0.2);
+      color: white;
+      border-left-color: #4f46e5;
+    }
+
+    .sidebar ul li a i {
+      font-size: 20px;
+      width: 24px;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      color: #4f46e5;
+      cursor: pointer;
+      z-index: 1000;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Main Content */
+    .content {
+      flex: 1;
+      margin-left: 260px;
+      padding: 30px;
+      transition: all 0.3s;
+    }
+
+    .content h2 {
+      font-size: 32px;
+      color: #1f2937;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #4f46e5;
+    }
+
+    /* Forms Row */
+    .forms-row {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    /* Table Box */
+    .table-box {
+      flex: 1;
+      min-width: 320px;
+      font-size: 16px;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .table-box h3 {
+      font-size: 22px;
+      color: #1f2937;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .table-box h3 i {
+      color: #4f46e5;
+    }
+
+    /* Form Row */
+    .form-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .form-settings .form-row,
+    .add-questions .form-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .form-settings label,
+    .add-questions label {
+      min-width: 140px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    /* Form Controls */
+    .table-box input[type="text"],
+    .table-box textarea,
+    .table-box select {
+      flex: 1;
+      padding: 12px 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .table-box input[type="text"]:focus,
+    .table-box textarea:focus,
+    .table-box select:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    }
+
+    .btn-success {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #059669;
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+
+    /* Questions Container */
+    #questionsContainer {
+      max-height: 500px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+
+    /* Question Box */
+    .question-box {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+    }
+
+    .question-box:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .question-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1f2937;
+      flex: 1;
+    }
+
+    .question-number {
+      background: #4f46e5;
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    .question-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    /* Options Grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .option-item {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .option-item:focus-within {
+      border-color: #4f46e5;
+      background: #f8fafc;
+    }
+
+    .option-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .option-number {
+      width: 30px;
+      height: 30px;
+      background: #4f46e5;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .option-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .option-check input {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .option-check label {
+      margin: 0;
+      font-weight: normal;
+      color: #6b7280;
+      cursor: pointer;
+    }
+
+    .option-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    /* Options List */
+    .options-list {
+      margin: 15px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .option-list-item {
+      padding: 12px;
+      margin-bottom: 8px;
+      background: white;
+      border-radius: 6px;
+      border-left: 4px solid transparent;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .option-list-item.correct {
+      background: #d1fae5;
+      border-left-color: #10b981;
+    }
+
+    .correct-badge {
+      background: #10b981;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin-left: auto;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #6b7280;
+    }
+
+    .empty-state i {
+      font-size: 48px;
+      color: #d1d5db;
+      margin-bottom: 20px;
+    }
+
+    .empty-state h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #374151;
+    }
+
+    /* Stats Cards */
+    .stats-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .stat-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+    }
+
+    .stat-icon.blue {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    }
+
+    .stat-icon.green {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+
+    .stat-icon.purple {
+      background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    }
+
+    .stat-info h3 {
+      font-size: 24px;
+      color: #1f2937;
+      margin-bottom: 5px;
+    }
+
+    .stat-info p {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* Alert */
+    .alert {
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .alert-success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .alert-danger {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .sidebar {
+        width: 240px;
+      }
+      .content {
+        margin-left: 240px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      
+      .sidebar {
+        transform: translateX(-100%);
+        z-index: 999;
+      }
+      
+      .sidebar.active {
+        transform: translateX(0);
+      }
+      
+      .content {
+        margin-left: 0;
+        padding: 70px 20px 20px;
+      }
+      
+      .forms-row {
+        flex-direction: column;
+      }
+      
+      .table-box {
+        min-width: 100%;
+      }
+    }
+
+    /* Additional Form Settings */
+    .category-select {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .category-select select,
+    .category-select input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    /* Save Form Button */
+    #saveFormBtn {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+    }
+
+    #saveFormBtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+    }
+
+    /* Header Actions */
+    .header-actions {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body>
+
+<i class='bx bx-menu hamburger' id="hamburgerBtn"></i>
+
+<aside class="sidebar" id="sidebar">
+  <h2><i class='bx bxs-school'></i> Admin</h2>
+  <ul>
+    <li><a href="dashboardadmin.html"><i class='bx bx-grid-alt'></i> Dashboard</a></li>
+    <li><a href="createn-new-form.html"><i class='bx bx-plus-circle'></i> Create New Form</a></li>
+    <li><a href="kids-form.html"><i class='bx bx-child'></i> Kids Forms</a></li>
+    <li class="active"><a href="youth-form.html"><i class='bx bx-user'></i> Youth Forms</a></li>
+    <li><a href="../hamza/home-page/index.html"><i class='bx bx-log-out'></i> Log Out</a></li>
+  </ul>
+</aside>
+
+<main class="content">
+  <h2><i class='bx bx-edit-alt'></i> Youth Quiz Management</h2>
+  
+  <!-- Stats Cards -->
+  <div class="stats-cards">
+    <div class="stat-card">
+      <div class="stat-icon blue">
+        <i class='bx bx-question-mark'></i>
+      </div>
+      <div class="stat-info">
+        <h3 id="totalQuestions">0</h3>
+        <p>Total Questions</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon green">
+        <i class='bx bx-check-circle'></i>
+      </div>
+      <div class="stat-info">
+        <h3 id="activeQuestions">0</h3>
+        <p>Active Questions</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon purple">
+        <i class='bx bx-category'></i>
+      </div>
+      <div class="stat-info">
+        <h3 id="totalCategories">0</h3>
+        <p>Categories</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alert Message -->
+  <div id="alertMessage" class="alert" style="display: none;"></div>
+
+  <!-- Header Actions -->
+  <div class="header-actions">
+    <button class="btn btn-success" onclick="exportQuestions()">
+      <i class='bx bx-download'></i> Export Questions
+    </button>
+    <button class="btn btn-primary" onclick="importQuestions()">
+      <i class='bx bx-upload'></i> Import Questions
+    </button>
+  </div>
+
+  <div class="forms-row">
+    <!-- FORM SETTINGS -->
+    <div class="table-box form-settings">
+      <h3><i class='bx bx-cog'></i> Form Settings</h3>
+      <div class="form-row">
+        <label>Form Title:</label>
+        <input type="text" id="formTitle" placeholder="Enter form title" value="Tech Skills Quiz">
+      </div>
+      <div class="form-row">
+        <label>Form Description:</label>
+        <textarea id="formDescription" placeholder="Enter form description">Test your knowledge in various tech skills with this interactive quiz.</textarea>
+      </div>
+      <div class="form-row">
+        <label>Form Status:</label>
+        <select id="formStatus">
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ADD QUESTIONS -->
+    <div class="table-box add-questions">
+      <h3><i class='bx bx-plus-circle'></i> Add New Question</h3>
+      
+      <div class="form-row">
+        <label>Question Text:</label>
+        <textarea id="newQuestionText" placeholder="Write your question here..."></textarea>
+      </div>
+
+      <div class="form-row">
+        <label>Answer Options:</label>
+        <div class="options-grid">
+          <div class="option-item">
+            <div class="option-header">
+              <span class="option-number">1</span>
+              <div class="option-check">
+                <input type="radio" name="correctAnswer" value="0" id="newCorrect1" required>
+                <label for="newCorrect1">Correct Answer</label>
+              </div>
+            </div>
+            <input type="text" class="option-input new-option" placeholder="Option 1" required>
+          </div>
+
+          <div class="option-item">
+            <div class="option-header">
+              <span class="option-number">2</span>
+              <div class="option-check">
+                <input type="radio" name="correctAnswer" value="1" id="newCorrect2">
+                <label for="newCorrect2">Correct Answer</label>
+              </div>
+            </div>
+            <input type="text" class="option-input new-option" placeholder="Option 2" required>
+          </div>
+
+          <div class="option-item">
+            <div class="option-header">
+              <span class="option-number">3</span>
+              <div class="option-check">
+                <input type="radio" name="correctAnswer" value="2" id="newCorrect3">
+                <label for="newCorrect3">Correct Answer</label>
+              </div>
+            </div>
+            <input type="text" class="option-input new-option" placeholder="Option 3 (Optional)">
+          </div>
+
+          <div class="option-item">
+            <div class="option-header">
+              <span class="option-number">4</span>
+              <div class="option-check">
+                <input type="radio" name="correctAnswer" value="3" id="newCorrect4">
+                <label for="newCorrect4">Correct Answer</label>
+              </div>
+            </div>
+            <input type="text" class="option-input new-option" placeholder="Option 4 (Optional)">
+          </div>
+        </div>
+      </div>
+
+      <div class="category-select">
+        <select id="newQuestionCategory">
+          <option value="web">Web Development</option>
+          <option value="ai">AI & Machine Learning</option>
+          <option value="backend">Backend Development</option>
+          <option value="design">UI/UX Design</option>
+          <option value="frameworks">Modern Frameworks</option>
+          <option value="logic">Data Structures & Algorithms</option>
+        </select>
+        <select id="newQuestionDifficulty">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" id="addQuestionBtn">
+        <i class='bx bx-plus'></i> Add Question
+      </button>
+    </div>
+  </div>
+
+  <!-- STORED QUESTIONS -->
+  <div class="table-box" style="width: 100%; margin-top: 20px;">
+    <h3><i class='bx bx-list-ul'></i> Stored Questions</h3>
+    <div id="questionsContainer" class="questions-container">
+      <!-- Questions will be loaded here -->
+    </div>
+  </div>
+
+  <button class="btn btn-success" id="saveFormBtn">
+    <i class='bx bx-save'></i> Save All Changes
+  </button>
+</main>
+
+<script>
+  // DOM Elements
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const sidebar = document.getElementById('sidebar');
+const addQuestionBtn = document.getElementById('addQuestionBtn');
+const questionsContainer = document.getElementById('questionsContainer');
+const saveFormBtn = document.getElementById('saveFormBtn');
+const alertMessage = document.getElementById('alertMessage');
+const newQuestionText = document.getElementById('newQuestionText');
+const newOptionInputs = document.querySelectorAll('.new-option');
+const formTitle = document.getElementById('formTitle');
+const formDescription = document.getElementById('formDescription');
+const formStatus = document.getElementById('formStatus');
+
+// Storage keys
+const STORAGE_KEY = 'quizQuestions';
+const FORM_SETTINGS_KEY = 'youthFormSettings';
+
+// Toggle sidebar on mobile
+hamburgerBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+});
+
+// Show alert message
+function showAlert(message, type = 'success') {
+    alertMessage.textContent = message;
+    alertMessage.className = `alert alert-${type}`;
+    alertMessage.style.display = 'flex';
+    
+    setTimeout(() => {
+        alertMessage.style.display = 'none';
+    }, 4000);
+}
+
+// Get questions from localStorage
+function getQuestions() {
+    try {
+        const questions = localStorage.getItem(STORAGE_KEY);
+        console.log('Getting questions from localStorage:', questions); 
+        return questions ? JSON.parse(questions) : [];
+    } catch (error) {
+        console.error('Error parsing questions from localStorage:', error);
+        return [];
+    }
+}
+
+// Save questions to localStorage
+function saveQuestions(questions) {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(questions));
+        console.log('Questions saved to localStorage:', questions.length); 
+        updateStats();
+    } catch (error) {
+        console.error('Error saving questions to localStorage:', error);
+        showAlert('Error saving questions!', 'danger');
+    }
+}
+
+// Get form settings
+function getFormSettings() {
+    try {
+        const settings = localStorage.getItem(FORM_SETTINGS_KEY);
+        return settings ? JSON.parse(settings) : {
+            title: 'Youth Tech Quiz',
+            description: 'Test your knowledge in various tech skills',
+            status: 'active'
+        };
+    } catch (error) {
+        console.error('Error parsing form settings:', error);
+        return {
+            title: 'Youth Tech Quiz',
+            description: 'Test your knowledge in various tech skills',
+            status: 'active'
+        };
+    }
+}
+
+// Save form settings
+function saveFormSettings() {
+    try {
+        const settings = {
+            title: formTitle.value,
+            description: formDescription.value,
+            status: formStatus.value,
+            updatedAt: new Date().toISOString()
+        };
+        localStorage.setItem(FORM_SETTINGS_KEY, JSON.stringify(settings));
+        console.log('Form settings saved:', settings);
+    } catch (error) {
+        console.error('Error saving form settings:', error);
+        showAlert('Error saving form settings!', 'danger');
+    }
+}
+
+// Update statistics
+function updateStats() {
+    const questions = getQuestions();
+    console.log('Updating stats with questions:', questions.length); 
+    
+    document.getElementById('totalQuestions').textContent = questions.length;
+    document.getElementById('activeQuestions').textContent = questions.filter(q => q.status !== 'inactive').length;
+    
+    // Count unique categories
+    const categories = new Set(questions.map(q => q.category).filter(Boolean));
+    document.getElementById('totalCategories').textContent = categories.size;
+}
+
+// Get category name
+function getCategoryName(category) {
+    const categories = {
+        'web': 'Web Development',
+        'ai': 'AI & Machine Learning',
+        'backend': 'Backend Development',
+        'design': 'UI/UX Design',
+        'frameworks': 'Modern Frameworks',
+        'logic': 'Data Structures & Algorithms'
+    };
+    return categories[category] || 'Uncategorized';
+}
+
+// Get difficulty name
+function getDifficultyName(difficulty) {
+    const difficulties = {
+        'beginner': 'Beginner',
+        'intermediate': 'Intermediate',
+        'advanced': 'Advanced'
+    };
+    return difficulties[difficulty] || 'Not Specified';
+}
+
+// Display questions
+function renderQuestions() {
+    const questions = getQuestions();
+    console.log('Rendering questions:', questions); 
+    
+    if (!questionsContainer) {
+        console.error('questionsContainer element not found!');
+        return;
+    }
+    
+    if (questions.length === 0) {
+        questionsContainer.innerHTML = `
+            <div class="empty-state">
+                <i class='bx bx-question-mark'></i>
+                <h4>No Questions Yet</h4>
+                <p>Start by adding your first question using the form above</p>
+            </div>
+        `;
+        return;
+    }
+    
+    let questionsHTML = '';
+    
+    questions.forEach((question, index) => {
+        // Check if question has required fields
+        if (!question.question || !question.options) {
+            console.warn('Invalid question found at index', index, question);
+            return;
+        }
+        
+        questionsHTML += `
+            <div class="question-box" data-id="${index}">
+                <div class="question-header">
+                    <div class="question-number">${index + 1}</div>
+                    <div class="question-text">${question.question}</div>
+                    <div class="question-actions">
+                        <button class="btn btn-danger btn-sm" onclick="deleteQuestion(${index})">
+                            <i class='bx bx-trash'></i> Delete
+                        </button>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px; margin-bottom: 15px; font-size: 14px;">
+                    <span style="background: #e5e7eb; padding: 4px 12px; border-radius: 20px;">
+                        <i class='bx bx-category'></i> ${getCategoryName(question.category)}
+                    </span>
+                    <span style="background: #e5e7eb; padding: 4px 12px; border-radius: 20px;">
+                        <i class='bx bx-trending-up'></i> ${getDifficultyName(question.difficulty)}
+                    </span>
+                </div>
+                
+                <ul class="options-list">
+        `;
+        
+        // Render options
+        question.options.forEach((option, optIndex) => {
+            if (option) {
+                questionsHTML += `
+                    <li class="option-list-item ${optIndex === question.correctAnswer ? 'correct' : ''}">
+                        <span>${option}</span>
+                        ${optIndex === question.correctAnswer ? '<span class="correct-badge">Correct Answer</span>' : ''}
+                    </li>
+                `;
+            }
+        });
+        
+        questionsHTML += `
+                </ul>
+            </div>
+        `;
+    });
+    
+    questionsContainer.innerHTML = questionsHTML;
+}
+
+// Delete a question
+function deleteQuestion(index) {
+    if (confirm('Are you sure you want to delete this question?')) {
+        const questions = getQuestions();
+        questions.splice(index, 1);
+        saveQuestions(questions);
+        renderQuestions();
+        showAlert('Question deleted successfully!', 'success');
+    }
+}
+
+// Add new question
+addQuestionBtn.addEventListener('click', function() {
+    // Get form data
+    const questionValue = newQuestionText.value.trim();
+    
+    if (!questionValue) {
+        showAlert('Please enter a question!', 'danger');
+        return;
+    }
+    
+    // Get options
+    const options = [];
+    newOptionInputs.forEach((input, index) => {
+        const value = input.value.trim();
+        if (value) {
+            options.push(value);
+        }
+    });
+    
+    // Validate at least 2 options
+    if (options.length < 2) {
+        showAlert('Please enter at least 2 options!', 'danger');
+        return;
+    }
+    
+    // Get correct answer
+    const correctAnswerRadio = document.querySelector('input[name="correctAnswer"]:checked');
+    if (!correctAnswerRadio) {
+        showAlert('Please select the correct answer!', 'danger');
+        return;
+    }
+    
+    let correctAnswer = parseInt(correctAnswerRadio.value);
+    
+    // Validate correct answer is within options range
+    if (correctAnswer >= options.length) {
+        showAlert('Correct answer must be one of the entered options!', 'danger');
+        return;
+    }
+    
+    // Adjust correct answer index based on available options
+    // This ensures the correct answer matches the actual option index
+    const actualOptions = [];
+    const selectedOptionValue = newOptionInputs[correctAnswer].value.trim();
+    
+    newOptionInputs.forEach((input, index) => {
+        const value = input.value.trim();
+        if (value) {
+            actualOptions.push(value);
+            // Find the new index of the selected correct answer
+            if (value === selectedOptionValue) {
+                correctAnswer = actualOptions.length - 1;
+            }
+        }
+    });
+    
+    // Get category and difficulty
+    const category = document.getElementById('newQuestionCategory').value;
+    const difficulty = document.getElementById('newQuestionDifficulty').value;
+    
+    // Create question object
+    const newQuestion = {
+        question: questionValue,
+        options: actualOptions,
+        correctAnswer: correctAnswer,
+        category: category,
+        difficulty: difficulty,
+        createdAt: new Date().toISOString(),
+        status: 'active'
+    };
+    
+    console.log('New question to add:', newQuestion); 
+    
+    // Save question
+    const questions = getQuestions();
+    questions.push(newQuestion);
+    saveQuestions(questions);
+    
+    // Reset form
+    newQuestionText.value = '';
+    newOptionInputs.forEach(input => {
+        input.value = '';
+    });
+    
+    // Reset radio buttons
+    document.querySelectorAll('input[name="correctAnswer"]').forEach(radio => {
+        radio.checked = false;
+    });
+    
+    // Focus back to first option
+    if (newOptionInputs[0]) {
+        newOptionInputs[0].value = '';
+        newOptionInputs[1].value = '';
+    }
+    
+    // Update display
+    renderQuestions();
+    
+    // Show success message
+    showAlert('Question added successfully!', 'success');
+    
+    // Scroll to show the new question
+    setTimeout(() => {
+        questionsContainer.scrollTop = questionsContainer.scrollHeight;
+    }, 100);
+});
+
+// Save form settings and questions
+saveFormBtn.addEventListener('click', function() {
+    saveFormSettings();
+    showAlert('All changes saved successfully!', 'success');
+});
+
+// Export questions
+function exportQuestions() {
+    const questions = getQuestions();
+    if (questions.length === 0) {
+        showAlert('No questions to export', 'warning');
+        return;
+    }
+    
+    const dataStr = JSON.stringify(questions, null, 2);
+    const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+    
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', `quiz-questions-${new Date().toISOString().split('T')[0]}.json`);
+    document.body.appendChild(linkElement);
+    linkElement.click();
+    document.body.removeChild(linkElement);
+    
+    showAlert('Questions exported successfully!', 'success');
+}
+
+// Import questions
+function importQuestions() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    
+    input.onchange = function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const importedQuestions = JSON.parse(e.target.result);
+                const currentQuestions = getQuestions();
+                
+                // Validate imported questions
+                const validQuestions = importedQuestions.filter(q => 
+                    q.question && 
+                    q.options && 
+                    Array.isArray(q.options) && 
+                    q.options.length >= 2 &&
+                    q.correctAnswer >= 0 &&
+                    q.correctAnswer < q.options.length
+                );
+                
+                if (validQuestions.length === 0) {
+                    showAlert('No valid questions found in the file!', 'danger');
+                    return;
+                }
+                
+                // Merge questions
+                const mergedQuestions = [...currentQuestions, ...validQuestions];
+                saveQuestions(mergedQuestions);
+                renderQuestions();
+                
+                showAlert(`Successfully imported ${validQuestions.length} questions!`, 'success');
+            } catch (error) {
+                console.error('Error importing questions:', error);
+                showAlert('Invalid JSON file. Please check the file format.', 'danger');
+            }
+        };
+        reader.readAsText(file);
+    };
+    
+    input.click();
+}
+
+// Clear all questions
+function clearAllQuestions() {
+    if (confirm('Are you sure you want to delete all questions? This action cannot be undone.')) {
+        localStorage.removeItem(STORAGE_KEY);
+        renderQuestions();
+        updateStats();
+        showAlert('All questions deleted successfully!', 'success');
+    }
+}
+
+// Load form settings on page load
+function loadFormSettings() {
+    const settings = getFormSettings();
+    formTitle.value = settings.title;
+    formDescription.value = settings.description;
+    formStatus.value = settings.status;
+}
+
+// Add sample questions for testing
+function addSampleQuestions() {
+    const questions = getQuestions();
+    if (questions.length === 0) {
+        const sampleQuestions = [
+            {
+                question: "What does HTML stand for?",
+                options: [
+                    "Hyper Text Markup Language",
+                    "High Tech Modern Language",
+                    "Hyper Transfer Markup Language",
+                    "Home Tool Markup Language"
+                ],
+                correctAnswer: 0,
+                category: "web",
+                difficulty: "beginner",
+                createdAt: new Date().toISOString(),
+                status: "active"
+            },
+            {
+                question: "Which language is used for styling web pages?",
+                options: [
+                    "HTML",
+                    "JavaScript",
+                    "CSS",
+                    "Python"
+                ],
+                correctAnswer: 2,
+                category: "web",
+                difficulty: "beginner",
+                createdAt: new Date().toISOString(),
+                status: "active"
+            },
+            {
+                question: "What is React primarily used for?",
+                options: [
+                    "Backend development",
+                    "Database management",
+                    "Building user interfaces",
+                    "Machine learning"
+                ],
+                correctAnswer: 2,
+                category: "frameworks",
+                difficulty: "intermediate",
+                createdAt: new Date().toISOString(),
+                status: "active"
+            }
+        ];
+        
+        saveQuestions(sampleQuestions);
+        showAlert('Sample questions added for testing!', 'success');
+    }
+}
+
+// Initial load
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded, initializing...'); 
+    
+    // Load form settings
+    loadFormSettings();
+    
+    // Add sample questions for testing (remove this in production)
+    addSampleQuestions();
+    
+    // Render questions
+    renderQuestions();
+    
+    // Update statistics
+    updateStats();
+    
+    // Add event listener for Enter key in question text
+    newQuestionText.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            addQuestionBtn.click();
+        }
+    });
+    
+    console.log('Initialization complete'); 
+});
+</script>
+</body>
+</html>

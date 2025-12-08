@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Questions</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .quiz-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 800px;
+      padding: 3rem;
+      margin-top: 2rem;
+    }
+
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-title {
+      color: #2d3436;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .quiz-subtitle {
+      color: #636e72;
+      font-size: 1.2rem;
+    }
+
+    .question-container {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 15px;
+      background: #f8f9fa;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .question-title {
+      color: #2d3436;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .options-list {
+      list-style: none;
+    }
+
+    .option-item {
+      margin-bottom: 1rem;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 1rem;
+      border-radius: 10px;
+      background: white;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .option-label:hover {
+      background: #e3f2fd;
+      border-color: #2196f3;
+    }
+
+    .option-input {
+      margin-right: 1rem;
+      transform: scale(1.5);
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      border: none;
+      padding: 1.5rem;
+      font-size: 1.3rem;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 2rem;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .result-container {
+      text-align: center;
+      padding: 2rem;
+      display: none;
+    }
+
+    .score {
+      font-size: 4rem;
+      color: #6a11cb;
+      margin: 1rem 0;
+    }
+
+    .message {
+      font-size: 1.5rem;
+      color: #2d3436;
+      margin-bottom: 2rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+    }
+
+    .debug-info {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1 class="quiz-title" id="quizTitle">Tech Skills Quiz</h1>
+      <p class="quiz-subtitle" id="quizDescription">Test your knowledge and improve your skills</p>
+    </div>
+
+    <div class="debug-info" style="display: none;" id="debugInfo">
+      <!-- معلومات التصحيح ستظهر هنا -->
+    </div>
+
+    <form id="quiz-form">
+      <!-- الأسئلة ستضاف هنا ديناميكياً -->
+    </form>
+
+    <button type="submit" form="quiz-form" class="submit-btn" id="submitBtn">Submit Answers</button>
+
+    <div class="result-container" id="result-container">
+      <h2 class="message">Your Score: <span class="score" id="score">0</span></h2>
+      <p class="message" id="result-message"></p>
+      <a href="youth.html" class="back-btn">Back to Home</a>
+      <a href="javascript:location.reload()" class="back-btn"
+        style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); margin-left: 10px;">
+        Try Again
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // مفتاح التخزين - يجب أن يكون نفس المفتاح المستخدم في صفحة الإدارة
+    const STORAGE_KEY = 'quizQuestions';
+    const FORM_SETTINGS_KEY = 'quizFormSettings';
+
+    // عناصر DOM
+    const quizForm = document.getElementById('quiz-form');
+    const resultContainer = document.getElementById('result-container');
+    const scoreElement = document.getElementById('score');
+    const resultMessage = document.getElementById('result-message');
+    const submitBtn = document.getElementById('submitBtn');
+    const quizTitle = document.getElementById('quizTitle');
+    const quizDescription = document.getElementById('quizDescription');
+    const debugInfo = document.getElementById('debugInfo');
+
+    // جلب الأسئلة من localStorage
+    function getQuestions() {
+      try {
+        const questions = localStorage.getItem(STORAGE_KEY);
+        console.log('Questions from localStorage:', questions);
+        return questions ? JSON.parse(questions) : [];
+      } catch (error) {
+        console.error('Error parsing questions:', error);
+        return [];
+      }
+    }
+
+    // جلب إعدادات النموذج
+    function getFormSettings() {
+      try {
+        const settings = localStorage.getItem(FORM_SETTINGS_KEY);
+        return settings ? JSON.parse(settings) : {
+          title: 'Tech Skills Quiz',
+          description: 'Test your knowledge and improve your skills',
+          status: 'active'
+        };
+      } catch (error) {
+        console.error('Error parsing form settings:', error);
+        return {
+          title: 'Tech Skills Quiz',
+          description: 'Test your knowledge and improve your skills',
+          status: 'active'
+        };
+      }
+    }
+
+    // عرض معلومات التصحيح
+    function showDebugInfo(questions) {
+      debugInfo.innerHTML = `
+                <strong>Debug Information:</strong><br>
+                - Questions found: ${questions.length}<br>
+                - Storage key: ${STORAGE_KEY}<br>
+                - Sample question: ${questions.length > 0 ? questions[0].question.substring(0, 50) + '...' : 'None'}
+            `;
+      debugInfo.style.display = 'block';
+    }
+
+    // تحميل وإعداد الاختبار
+    function initializeQuiz() {
+      const questions = getQuestions();
+      const settings = getFormSettings();
+
+      // تحديث العنوان والوصف
+      if (settings.title) quizTitle.textContent = settings.title;
+      if (settings.description) quizDescription.textContent = settings.description;
+
+      // إذا لم توجد أسئلة، نعرض رسالة للمستخدم
+      if (questions.length === 0) {
+        quizForm.innerHTML = `
+    <div class="question-container">
+        <h3 class="question-title">No questions available yet.</h3>
+        <p>Please check back later or contact the administrator.</p>
+        <p style="margin-top: 10px; color: #666; font-size: 14px;">
+            <i>Debug: No questions found in localStorage with key '${STORAGE_KEY}'</i>
+        </p>
+    </div>
+`;
+        submitBtn.style.display = 'none';
+        showDebugInfo(questions);
+        return;
+      }
+
+      // عرض معلومات التصحيح (يمكن إخفاؤها لاحقاً)
+      showDebugInfo(questions);
+
+      // عرض الأسئلة
+      questions.forEach((question, index) => {
+        const questionElement = document.createElement('div');
+        questionElement.className = 'question-container';
+        questionElement.innerHTML = `
+                    <h3 class="question-title">${index + 1}. ${question.question}</h3>
+                    <ul class="options-list">
+                        ${question.options.map((option, optionIndex) => `
+                            <li class="option-item">
+                                <label class="option-label">
+                                    <input type="radio" class="option-input" name="question${index}" value="${optionIndex}" required>
+                                    ${option}
+                                </label>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+        quizForm.appendChild(questionElement);
+      });
+    }
+
+    // معالجة إرسال النموذج
+    quizForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const questions = getQuestions();
+      let score = 0;
+      let answeredQuestions = 0;
+
+      questions.forEach((question, index) => {
+        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+        if (selectedOption) {
+          answeredQuestions++;
+          if (parseInt(selectedOption.value) === question.correctAnswer) {
+            score++;
+          }
+        }
+      });
+
+      // حساب النسبة المئوية
+      const percentage = (score / questions.length) * 100;
+
+      // عرض النتيجة
+      scoreElement.textContent = `${score} / ${questions.length}`;
+      if (percentage >= 80) {
+        resultMessage.textContent = 'Excellent! You have a strong understanding of this topic.';
+      } else if (percentage >= 60) {
+        resultMessage.textContent = 'Good job! You have a decent understanding, but there is room for improvement.';
+      } else if (percentage >= 40) {
+        resultMessage.textContent = 'Keep learning! Review the material and try again.';
+      } else {
+        resultMessage.textContent = 'You need to study more. Review the basics and try again.';
+      }
+
+      // إخفاء النموذج وإظهار النتيجة
+      quizForm.style.display = 'none';
+      submitBtn.style.display = 'none';
+      debugInfo.style.display = 'none';
+      resultContainer.style.display = 'block';
+
+      // حفظ النتيجة
+      saveResult(score, questions.length);
+    });
+
+    // حفظ النتيجة في localStorage
+    function saveResult(score, totalQuestions) {
+      try {
+        const results = JSON.parse(localStorage.getItem('quizResults')) || [];
+        results.push({
+          date: new Date().toISOString(),
+          score: score,
+          total: totalQuestions,
+          percentage: (score / totalQuestions * 100).toFixed(2)
+        });
+        localStorage.setItem('quizResults', JSON.stringify(results.slice(-10))); // حفظ آخر 10 نتائج فقط
+      } catch (error) {
+        console.error('Error saving result:', error);
+      }
+    }
+
+    // تهيئة الصفحة عند التحميل
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('Quiz page loaded');
+
+      // تهيئة الاختبار فقط بدون إضافة أسئلة تجريبية
+      initializeQuiz();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+.forms-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.forms-row .table-box {
+  flex: 1;
+  min-width: 320px;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.form-settings .form-row,
+.add-questions .form-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-settings label,
+.add-questions label {
+  min-width:140px;
+  font-weight:bold;
+}
+
+.table-box input[type="text"], 
+.table-box textarea, 
+.table-box select {
+  flex:1;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:16px;
+  box-sizing:border-box;
+}
+
+textarea { 
+  resize: vertical; 
+  min-height:80px; 
+}
+
+.question-box {
+  background:#f9f9f9;
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:15px;
+}
+
+.question-box label {
+  display:block;
+  margin-top:10px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.answersContainer {
+  margin-top:10px;
+}
+
+.answer-item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:8px;
+}
+
+.answer-item input[type="text"] {
+  flex:1;
+  padding:8px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:16px;
+}
+
+.removeAnswerBtn {
+  background:#ef4444;
+  color:white;
+  border:none;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.addAnswerBtn {
+  margin-top:10px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.saveQuestionBtn {
+  margin-top:10px;
+  background:#10b981;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+#saveFormBtn {
+  margin-top:20px;
+  background:#10b981;
+  color:white;
+  padding:12px 24px;
+  border-radius:10px;
+  font-size:18px;
+  border:none;
+  cursor:pointer;
+  float: left;
+}
+
+.addAnswerBtn:hover, .removeAnswerBtn:hover, #saveFormBtn:hover, .saveQuestionBtn:hover {
+  opacity:0.85;
+  transition:0.2s;
+}

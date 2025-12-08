@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey IT Kids</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Irish+Grover&family=Itim&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="img/banana-removebg-preview.png">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-content">
+            <!-- Logo on Left -->
+            <div class="left-side">
+                <img src="img/logo.png" class="nav-logo" alt="Monkey IT Kids Logo">
+                <div class="nav-brand">
+                    <span class="brand-name">Monkey IT Kids</span>
+                    <span class="brand-sub">Learning Through Forms</span>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="right-side">
+                <div class="profile-badge">
+                    <img src="img/Happy-Gordo.png" class="nav-profile" alt="Child Profile">
+                    <span class="notification-dot"></span>
+                </div>
+                <button id="burger" class="burger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="img/ChatGPT Image Dec 3, 2025, 06_51_45 PM.png" alt="Profile">
+                <h3 id="sidebarUserName">Hi, Child!</h3>
+            </div>
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="profile.html"><i class="fas fa-user"></i> My Account</a>
+            <a href="form.html"><i class="fas fa-file-alt"></i>Forms</a>
+            <a href="#learning"><i class="fas fa-star"></i> Why Us</a>
+            <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
+            <a href="#"><i class="fas fa-unlock"></i> Free Access</a>
+            <button class="signout-btn" onclick="window.location.href='../hamza/home-page/index.html'"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+        </div>
+    </header>
+    <main>
+        <section class="hero-kids">
+            <!-- ديكورات الموز -->
+            <img src="img/banana-removebg-preview.png" class="banana-decoration banana-1" alt="Banana decoration">
+            <img src="img/banana-removebg-preview.png" class="banana-decoration banana-2" alt="Banana decoration">
+            <img src="img/bananaa.png" class="banana-decoration banana-3" alt="Banana decoration">
+            <img src="img/bananaa.png" class="banana-decoration banana-4" alt="Banana decoration">
+
+            <div class="container hero-center-fix">
+                <div class="hero-content-wrapper">
+                    <div class="hero-content text-center-fix">
+                        <h1>Monkey IT Kids</h1>
+                        <p>Your Child's First Step Into the Future of Technology</p>
+                        <button class="kids-btn" aria-label="Start learning">Let's Go!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- صورة القرد -->
+            <img src="img/monkey.png" class="hero-monkey" alt="Friendly monkey mascot">
+        </section>
+        <div class="typewriter-container">
+            <div class="typewriter">
+                <span class="typewriter-text" id="typewriter"></span>
+                <span class="cursor">|</span>
+            </div>
+            <div class="subtitle">Keep learning to unlock more phrases!</div>
+        </div>
+
+        <section class="kids-love-section" id="learning">
+            <!-- العنوان الرئيسي -->
+            <div class="title-container">
+                <h2 class="kids-title">
+                    <span class="title-line-1">KIDS WILL LOVE LEARNING IT</span>
+                    <span class="title-line-1">WITH MONKEY IT KIDS</span>
+                </h2>
+            </div>
+
+            <!-- حاوية البطاقات -->
+            <div class="features-container">
+
+                <!-- Card 1 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <div class="icon-wrapper">
+                            <img src="img/Monkey1.png" alt="IT Basics" class="feature-img">
+                            <div class="icon-ring"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>IT BASICS FOR KIDS</h3>
+                        <p>
+                            We teach young learners the essentials of computers, devices,
+                            and technology in a simple, kid-friendly way.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <div class="icon-wrapper">
+                            <img src="img/monkey2.png" alt="Interactive Forms" class="feature-img">
+                            <div class="icon-ring"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>FUN INTERACTIVE FORMS</h3>
+                        <p>
+                            Kids explore IT topics through simple forms and quizzes designed
+                            to build understanding step by step.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <div class="icon-wrapper">
+                            <img src="img/monkey4.png" alt="IT Skills" class="feature-img">
+                            <div class="icon-ring"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>REAL IT SKILLS FOR THE FUTURE</h3>
+                        <p>
+                            We guide kids to explore IT basics with clear, fun lessons that make understanding
+                            technology enjoyable and stress-free.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- زر إضافي -->
+            <div class="section-footer" data-aos="fade-up">
+                <div class="fun-fact">
+                    <span class="fact-icon">💡</span>
+                    <p>Over <strong>+100</strong> kids already learned with us!</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="learning-activities" >
+
+            <!-- العنوان الرئيسي -->
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="titlee-text">Learning Activities</span>
+                </h2>
+                <p class="section-subtitle">Fun & Interactive Ways to Learn Technology</p>
+            </div>
+
+            <!-- حاوية البطاقات الرئيسية -->
+            <div class="cards-container">
+
+            </div>
+        </section>
+        <section class="faq-section" id="faq">
+            <!-- تأثيرات خلفية ممتعة -->
+            <div class="faq-background">
+                <div class="bubble bubble-1"></div>
+                <div class="bubble bubble-2"></div>
+                <div class="bubble bubble-3"></div>
+                <div class="question-mark">?</div>
+            </div>
+
+            <div class="container">
+                <!-- العنوان الرئيسي مع تأثيرات -->
+                <div class="faq-header">
+                    <h2 class="faq-title">
+                        <span class="title-text">Frequently Asked</span>
+                        <span class="title-highlight">Questions</span>
+                    </h2>
+                    <p class="faq-subtitle">Find quick answers to common questions</p>
+
+                </div>
+
+                <!-- حاوية الأسئلة والصور -->
+                <div class="faq-content">
+                    <div class="faq-container">
+                        <!-- السؤال 1 -->
+                        <div class="faq-item" data-aos="fade-right" data-aos-delay="100">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="question-number">01</span>
+                                <span class="question-text">
+                                    <span class="question-icon"></span>
+                                    What is Monkey IT Kids?
+                                </span>
+                                <span class="arrow-container">
+                                    <span class="arrow">↓</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer" aria-hidden="true">
+                                <div class="answer-content">
+                                    <p>
+                                        <strong>Monkey IT Kids</strong> is a fun, interactive learning platform designed
+                                        specifically for children to explore the exciting world of Information
+                                        Technology.
+                                        We make learning computer basics, programming concepts, and internet safety
+                                        enjoyable through games, animations, and hands-on activities.
+                                    </p>
+                                    <div class="answer-tags">
+                                        <span class="tag">Fun Learning</span>
+                                        <span class="tag">Interactive</span>
+                                        <span class="tag">Kid-Friendly</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 2 -->
+                        <div class="faq-item" data-aos="fade-right" data-aos-delay="200">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="question-number">02</span>
+                                <span class="question-text">
+                                    <span class="question-icon"></span>
+                                    Which age groups can use the platform?
+                                </span>
+                                <span class="arrow-container">
+                                    <span class="arrow">↓</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer" aria-hidden="true">
+                                <div class="answer-content">
+                                    <div class="answer-icon"></div>
+                                    <p>
+                                        Our platform is perfectly designed for <strong>children aged 6–12
+                                            years</strong>.
+                                        We offer age-appropriate content with three difficulty levels:
+                                    </p>
+                                    <ul class="age-list">
+                                        <li>
+                                            <span class="age-badge">6-8 years</span>
+                                            <span class="age-desc">Basic concepts with lots of visuals and games</span>
+                                        </li>
+                                        <li>
+                                            <span class="age-badge">9-10 years</span>
+                                            <span class="age-desc">Interactive challenges and simple coding</span>
+                                        </li>
+                                        <li>
+                                            <span class="age-badge">11-12 years</span>
+                                            <span class="age-desc">Advanced projects and problem-solving</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- السؤال 3 -->
+                        <div class="faq-item" data-aos="fade-right" data-aos-delay="300">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="question-number">03</span>
+                                <span class="question-text">
+                                    <span class="question-icon"></span>
+                                    Do kids need any previous IT knowledge?
+                                </span>
+                                <span class="arrow-container">
+                                    <span class="arrow">↓</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer" aria-hidden="true">
+                                <div class="answer-content">
+
+                                    <p>
+                                        <strong>No previous experience needed!</strong> We start from the very basics
+                                        and gradually build up skills. Our platform is designed for complete beginners:
+                                    </p>
+                                    <div class="knowledge-levels">
+                                        <div class="level">
+                                            <div class="level-icon">🌟</div>
+                                            <div class="level-info">
+                                                <h4>Level 1: Complete Beginner</h4>
+                                                <p>Learn computer parts, mouse skills, and basic navigation</p>
+                                            </div>
+                                        </div>
+                                        <div class="level">
+                                            <div class="level-icon">🚀</div>
+                                            <div class="level-info">
+                                                <h4>Level 2: Interactive Learner</h4>
+                                                <p>Practice with games, puzzles, and simple programming</p>
+                                            </div>
+                                        </div>
+                                        <div class="level">
+                                            <div class="level-icon">🏆</div>
+                                            <div class="level-info">
+                                                <h4>Level 3: Young Creator</h4>
+                                                <p>Create projects, solve challenges, and build confidence</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- سؤال إضافي مخفي -->
+                        <div class="faq-item faq-hidden" data-aos="fade-right" data-aos-delay="400">
+                            <button class="faq-question" aria-expanded="false">
+                                <span class="question-number">04</span>
+                                <span class="question-text">
+                                    <span class="question-icon"></span>
+                                    How is learning made fun for kids?
+                                </span>
+                                <span class="arrow-container">
+                                    <span class="arrow">↓</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer" aria-hidden="true">
+                                <div class="answer-content">
+                                    <p>
+                                        We use <strong>game-based learning, animations, rewards, and interactive
+                                            challenges</strong> to keep children engaged. Every lesson feels like play!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- رابط رؤية جميع الأسئلة -->
+                        <div class="faq-footer" data-aos="fade-up">
+                            <a href="#" class="see-all-btn">
+                                <span class="btn-text">See all FAQs</span>
+                                <span class="btn-icon">
+                                    <span class="icon-arrow">→</span>
+                                </span>
+                            </a>
+
+                            <!-- إحصائية صغيرة -->
+                            <div class="faq-stats">
+                                <div class="stat">
+                                    <div class="stat-number">50+</div>
+                                    <div class="stat-label">Questions Answered</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">24/7</div>
+                                    <div class="stat-label">Support Available</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- صورة الفلامنجو مع تأثيرات -->
+                    <div class="flamingo-container" data-aos="fade-left" data-aos-delay="500">
+                        <div class="flamingo-wrapper">
+                            <img src="ChatGPT Image Dec 3, 2025, 09_37_27 PM.png" class="faq-flamingo"
+                                alt="Friendly Flamingo Mascot">
+                            <div class="flamingo-shadow"></div>
+                            <div class="flamingo-speech">
+                                <span class="speech-text">Need help?</span>
+                                <span class="speech-arrow">▼</span>
+                            </div>
+                        </div>
+
+                        <!-- نقاط ديكور حول الفلامنجو -->
+                        <div class="flamingo-dots">
+                            <div class="dot dot-1"></div>
+                            <div class="dot dot-2"></div>
+                            <div class="dot dot-3"></div>
+                        </div>
+
+                        <!-- زر تفاعلي مع الفلامنجو -->
+                        <button class="flamingo-btn" aria-label="Ask Flamingo a question">
+                            <span class="flamingo-btn-text">Ask me!</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="free-access">
+            <div class="container">
+                <!-- العنوان الرئيسي -->
+                <div class="title-wrapper">
+                    <h2 class="free-title">FREE ACCESS</h2>
+                    <p class="free-subtitle">ENJOY FUN & FRIENDLY IT LEARNING FOR YOUR KIDS!</p>
+                </div>
+
+                <!-- الوصف -->
+                <p class="free-desc">
+                    Kids can explore IT basics, programming concepts, and internet safety through simple,
+                    interactive forms designed just for them.
+                </p>
+
+                <!-- المحتوى الرئيسي -->
+                <div class="free-content">
+                    <!-- المخطط -->
+                    <div class="chart-box">
+                        <div class="">
+                            <img src="img/chart.png" alt="Chart showing learning progress" class="chart-img">
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <div class="">
+                            <img src="img/monkeys.png" alt="Chart showing learning progress" class="chart-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الزر الرئيسي -->
+                <div class="button-container">
+                    <p class="note">No credit card required • Free forever for kids</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section brand">
+            <img src="img/logo.png" class="footer-logo">
+            <h2>Monkey IT Kids</h2>
+            <p>Your child’s first step into the world of technology</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">FAQ</a>
+            <a href="#">Why Us</a>
+            <a href="#">Free Access</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Learning Topics</h3>
+            <a href="#">Computer Basics Quiz</a>
+            <a href="#">Programming Basics Challenge</a>
+            <a href="#">Internet Safety for Kids</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: info@monkeyitkids.com</p>
+            <p>WhatsApp: +962 79 870 6042</p>
+            <p>Orange Coding School</p>
+            <p>Amman, Jordan</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Monkey IT Kids — All Rights Reserved.
+    </div>
+</footer>
+
+    <script src="profile.js"></script>
+    <script src="script.js"></script>
+    <script src="imageService.js.js"></script>
+
+    <sript src="avatarStorage.js.js"></sript>
+</body>
+
+</html>

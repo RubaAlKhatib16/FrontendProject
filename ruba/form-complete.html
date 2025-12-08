@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 1: Introduction to Computers - Monkey IT Kids</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="form-complete.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="complete-form-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="form-info">
+                    <div class="breadcrumb">
+                        <a href="index.html" class="home-link">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="courses.html">Courses</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="course-details.html?course=computer-basics">Computer Basics</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span class="current-page">Form 1</span>
+                    </div>
+                    
+                    <div class="form-title-section">
+                        <div class="form-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div>
+                            <h1 class="form-title">Introduction to Computers</h1>
+                            <p class="form-subtitle">Form 1 - Computer Basics Course</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-question-circle"></i>
+                            <span><strong>5</strong> Questions</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span><strong>10-15</strong> minutes</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-star"></i>
+                            <span><strong>10</strong> Points</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Beginner Level</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-progress">
+                    <div class="progress-info">
+                        <span class="progress-label">Form Progress</span>
+                        <span class="progress-percent" id="form-progress">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <button class="action-btn btn-save" id="save-btn">
+                    <i class="far fa-save"></i>
+                    Save
+                </button>
+                <button class="action-btn btn-exit" id="exit-btn">
+                    <i class="fas fa-times"></i>
+                    Exit
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="complete-form-container">
+        <div class="container">
+            <!-- Instructions Card -->
+            <section class="instructions-section">
+                <div class="instructions-card">
+                    <div class="instructions-header">
+                        <div class="header-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h2>Welcome to Form 1!</h2>
+                    </div>
+                    
+                    <div class="instructions-content">
+                        <p class="instructions-intro">
+                            Complete this form to test your knowledge about computers. Read each question carefully and select the best answer.
+                        </p>
+                        
+                        <div class="instructions-grid">
+                            <div class="instruction-item">
+                                <div class="instruction-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="instruction-text">
+                                    <h4>Complete All Questions</h4>
+                                    <p>This form contains 5 multiple-choice questions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="instruction-item">
+                                <div class="instruction-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="instruction-text">
+                                    <h4>Use Hints</h4>
+                                    <p>Click the hint button if you need help</p>
+                                </div>
+                            </div>
+                            
+                            <div class="instruction-item">
+                                <div class="instruction-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="instruction-text">
+                                    <h4>Time Limit</h4>
+                                    <p>You have 15 minutes to complete the form</p>
+                                </div>
+                            </div>
+                            
+                            <div class="instruction-item">
+                                <div class="instruction-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="instruction-text">
+                                    <h4>Earn Rewards</h4>
+                                    <p>Get points and bananas for correct answers</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="instructions-tips">
+                            <h3><i class="fas fa-tips"></i> Tips for Success:</h3>
+                            <ul>
+                                <li>Read each question carefully before answering</li>
+                                <li>Use the hints if you're unsure</li>
+                                <li>You can change your answers before submitting</li>
+                                <li>Try to finish within the time limit for bonus points</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="instructions-footer">
+                        <button class="btn-start-form" id="start-form-btn">
+                            <i class="fas fa-play"></i>
+                            Start Form
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Questions Container (Initially Hidden) -->
+            <form id="complete-form" class="questions-container" style="display: none;">
+                <!-- Question 1 -->
+                <div class="question-card" data-question="1">
+                    <div class="question-header">
+                        <div class="question-number">
+                            <span class="number">1</span>
+                            <span class="difficulty easy">Easy</span>
+                        </div>
+                        <div class="question-points">
+                            <i class="fas fa-star"></i>
+                            <span>2 points</span>
+                        </div>
+                    </div>
+                    
+                    <div class="question-body">
+                        <div class="question-content">
+                            <h3 class="question-text">What is a computer?</h3>
+                            <p class="question-desc">A computer is an electronic device that can...</p>
+                        </div>
+                        
+                        <div class="question-hint-section">
+                            <button class="btn-hint" type="button" data-hint="1">
+                                <i class="fas fa-lightbulb"></i>
+                                Need a hint?
+                            </button>
+                            <div class="hint-content" id="hint-1">
+                                <p><strong>Hint:</strong> Computers help us with many tasks like writing, drawing, playing games, and learning!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="options-container">
+                            <div class="option-group">
+                                <label class="option-item">
+                                    <input type="radio" name="q1" value="A" data-correct="true">
+                                    <div class="option-content">
+                                        <span class="option-letter">A</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Store and process information</span>
+                                            <span class="option-feedback correct-feedback">
+                                                <i class="fas fa-check"></i>
+                                                Correct! A computer stores and processes information to help us with many tasks.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q1" value="B">
+                                    <div class="option-content">
+                                        <span class="option-letter">B</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Make food and drinks</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                Not quite. That's what a kitchen does!
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q1" value="C">
+                                    <div class="option-content">
+                                        <span class="option-letter">C</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Grow plants and flowers</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                Computers don't grow plants, but they can help us learn about them!
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q1" value="D">
+                                    <div class="option-content">
+                                        <span class="option-letter">D</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Drive cars and trucks</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                Some cars have computers in them, but computers themselves don't drive.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-status" id="status-1">
+                            <div class="status-content">
+                                <i class="fas fa-clock"></i>
+                                <span>Not answered yet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-card" data-question="2">
+                    <div class="question-header">
+                        <div class="question-number">
+                            <span class="number">2</span>
+                            <span class="difficulty easy">Easy</span>
+                        </div>
+                        <div class="question-points">
+                            <i class="fas fa-star"></i>
+                            <span>2 points</span>
+                        </div>
+                    </div>
+                    
+                    <div class="question-body">
+                        <div class="question-content">
+                            <h3 class="question-text">Which of these is NOT a computer part?</h3>
+                        </div>
+                        
+                        <div class="question-hint-section">
+                            <button class="btn-hint" type="button" data-hint="2">
+                                <i class="fas fa-lightbulb"></i>
+                                Need a hint?
+                            </button>
+                            <div class="hint-content" id="hint-2">
+                                <p><strong>Hint:</strong> Think about what you see on a computer desk - monitor, keyboard, mouse. Which one doesn't belong?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="options-container">
+                            <div class="option-group">
+                                <label class="option-item">
+                                    <input type="radio" name="q2" value="A">
+                                    <div class="option-content">
+                                        <span class="option-letter">A</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Monitor</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                The monitor IS a computer part - it shows us everything!
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q2" value="B" data-correct="true">
+                                    <div class="option-content">
+                                        <span class="option-letter">B</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Banana</span>
+                                            <span class="option-feedback correct-feedback">
+                                                <i class="fas fa-check"></i>
+                                                Correct! A banana is a fruit, not a computer part. Good catch!
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q2" value="C">
+                                    <div class="option-content">
+                                        <span class="option-letter">C</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Keyboard</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                The keyboard IS a computer part - we use it to type.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q2" value="D">
+                                    <div class="option-content">
+                                        <span class="option-letter">D</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Mouse</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                The mouse IS a computer part - we use it to click things.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-status" id="status-2">
+                            <div class="status-content">
+                                <i class="fas fa-clock"></i>
+                                <span>Not answered yet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-card" data-question="3">
+                    <div class="question-header">
+                        <div class="question-number">
+                            <span class="number">3</span>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="question-points">
+                            <i class="fas fa-star"></i>
+                            <span>2 points</span>
+                        </div>
+                    </div>
+                    
+                    <div class="question-body">
+                        <div class="question-content">
+                            <h3 class="question-text">What do we use a keyboard for?</h3>
+                        </div>
+                        
+                        <div class="question-hint-section">
+                            <button class="btn-hint" type="button" data-hint="3">
+                                <i class="fas fa-lightbulb"></i>
+                                Need a hint?
+                            </button>
+                            <div class="hint-content" id="hint-3">
+                                <p><strong>Hint:</strong> You're using it right now to answer these questions!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="options-container">
+                            <div class="option-group">
+                                <label class="option-item">
+                                    <input type="radio" name="q3" value="A" data-correct="true">
+                                    <div class="option-content">
+                                        <span class="option-letter">A</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Typing letters and numbers</span>
+                                            <span class="option-feedback correct-feedback">
+                                                <i class="fas fa-check"></i>
+                                                Correct! We use the keyboard to type letters, numbers, and commands.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q3" value="B">
+                                    <div class="option-content">
+                                        <span class="option-letter">B</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Watching movies</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                We use the monitor to watch movies, not the keyboard.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q3" value="C">
+                                    <div class="option-content">
+                                        <span class="option-letter">C</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Listening to music</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                We use speakers or headphones to listen to music.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q3" value="D">
+                                    <div class="option-content">
+                                        <span class="option-letter">D</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Drawing pictures</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                We can use a mouse or drawing tablet to draw pictures.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-status" id="status-3">
+                            <div class="status-content">
+                                <i class="fas fa-clock"></i>
+                                <span>Not answered yet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-card" data-question="4">
+                    <div class="question-header">
+                        <div class="question-number">
+                            <span class="number">4</span>
+                            <span class="difficulty easy">Easy</span>
+                        </div>
+                        <div class="question-points">
+                            <i class="fas fa-star"></i>
+                            <span>2 points</span>
+                        </div>
+                    </div>
+                    
+                    <div class="question-body">
+                        <div class="question-content">
+                            <h3 class="question-text">Which part shows us what's on the computer?</h3>
+                        </div>
+                        
+                        <div class="question-hint-section">
+                            <button class="btn-hint" type="button" data-hint="4">
+                                <i class="fas fa-lightbulb"></i>
+                                Need a hint?
+                            </button>
+                            <div class="hint-content" id="hint-4">
+                                <p><strong>Hint:</strong> It's like a TV screen for the computer!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="options-container">
+                            <div class="option-group">
+                                <label class="option-item">
+                                    <input type="radio" name="q4" value="A">
+                                    <div class="option-content">
+                                        <span class="option-letter">A</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Keyboard</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                The keyboard is for typing, not showing what's on the computer.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q4" value="B" data-correct="true">
+                                    <div class="option-content">
+                                        <span class="option-letter">B</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Monitor</span>
+                                            <span class="option-feedback correct-feedback">
+                                                <i class="fas fa-check"></i>
+                                                Correct! The monitor shows us everything that's happening on the computer.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q4" value="C">
+                                    <div class="option-content">
+                                        <span class="option-letter">C</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Mouse</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                The mouse helps us click things, but doesn't show us anything.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q4" value="D">
+                                    <div class="option-content">
+                                        <span class="option-letter">D</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Printer</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                The printer makes paper copies, but doesn't show what's on the computer.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-status" id="status-4">
+                            <div class="status-content">
+                                <i class="fas fa-clock"></i>
+                                <span>Not answered yet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-card" data-question="5">
+                    <div class="question-header">
+                        <div class="question-number">
+                            <span class="number">5</span>
+                            <span class="difficulty medium">Medium</span>
+                        </div>
+                        <div class="question-points">
+                            <i class="fas fa-star"></i>
+                            <span>2 points</span>
+                        </div>
+                    </div>
+                    
+                    <div class="question-body">
+                        <div class="question-content">
+                            <h3 class="question-text">What should you do before touching a computer?</h3>
+                        </div>
+                        
+                        <div class="question-hint-section">
+                            <button class="btn-hint" type="button" data-hint="5">
+                                <i class="fas fa-lightbulb"></i>
+                                Need a hint?
+                            </button>
+                            <div class="hint-content" id="hint-5">
+                                <p><strong>Hint:</strong> Clean hands keep computers working well!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="options-container">
+                            <div class="option-group">
+                                <label class="option-item">
+                                    <input type="radio" name="q5" value="A">
+                                    <div class="option-content">
+                                        <span class="option-letter">A</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Eat a snack</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                It's better not to eat near the computer to keep it clean.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q5" value="B" data-correct="true">
+                                    <div class="option-content">
+                                        <span class="option-letter">B</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Wash your hands</span>
+                                            <span class="option-feedback correct-feedback">
+                                                <i class="fas fa-check"></i>
+                                                Correct! Clean hands help keep the computer clean and working properly.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q5" value="C">
+                                    <div class="option-content">
+                                        <span class="option-letter">C</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Jump up and down</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                Exercise is good, but it's not necessary before using a computer!
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="option-item">
+                                    <input type="radio" name="q5" value="D">
+                                    <div class="option-content">
+                                        <span class="option-letter">D</span>
+                                        <div class="option-text-content">
+                                            <span class="option-text">Sing a song</span>
+                                            <span class="option-feedback">
+                                                <i class="fas fa-times"></i>
+                                                Singing is fun, but washing hands is more important for computer safety.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-status" id="status-5">
+                            <div class="status-content">
+                                <i class="fas fa-clock"></i>
+                                <span>Not answered yet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form Actions -->
+                <div class="form-actions-section">
+                    <div class="actions-container">
+                        <div class="answers-summary" id="answers-summary">
+                            <h3><i class="fas fa-clipboard-list"></i> Your Answers Summary</h3>
+                            <div class="summary-grid">
+                                <div class="summary-item">
+                                    <span class="summary-label">Questions Answered:</span>
+                                    <span class="summary-value" id="answered-count">0/5</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Correct Answers:</span>
+                                    <span class="summary-value" id="correct-count">0</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Points Earned:</span>
+                                    <span class="summary-value" id="points-earned">0/10</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Score:</span>
+                                    <span class="summary-value" id="score-percent">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button type="button" class="btn-check-answers" id="check-answers-btn">
+                                <i class="fas fa-check-circle"></i>
+                                Check My Answers
+                            </button>
+                            
+                            <button type="button" class="btn-submit-form" id="submit-form-btn" disabled>
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Form
+                            </button>
+                            
+                            <button type="button" class="btn-review" id="review-answers-btn" style="display: none;">
+                                <i class="fas fa-redo"></i>
+                                Review Answers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Results Section (Initially Hidden) -->
+            <section class="results-section" id="results-section" style="display: none;">
+                <div class="results-card">
+                    <div class="results-header">
+                        <div class="results-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h2 class="results-title">Form Completed! 🎉</h2>
+                        <p class="results-subtitle">Great job completing the Introduction to Computers form!</p>
+                    </div>
+                    
+                    <div class="results-body">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <div class="score-content">
+                                    <span class="score-percent" id="final-score">0%</span>
+                                    <span class="score-label">Your Score</span>
+                                </div>
+                            </div>
+                            
+                            <div class="score-details">
+                                <h3>Your Results</h3>
+                                <div class="results-stats">
+                                    <div class="result-stat">
+                                        <div class="stat-icon correct">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <h4 id="final-correct">0</h4>
+                                            <p>Correct Answers</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="result-stat">
+                                        <div class="stat-icon points">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <h4 id="final-points">0</h4>
+                                            <p>Points Earned</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="result-stat">
+                                        <div class="stat-icon time">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <h4 id="final-time">00:00</h4>
+                                            <p>Time Taken</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="result-stat">
+                                        <div class="stat-icon bananas">
+                                            <i class="fas fa-birthday-cake"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <h4 id="final-bananas">0</h4>
+                                            <p>Bananas Earned</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="results-message" id="results-message">
+                            <div class="message-content">
+                                <i class="fas fa-comment-dots"></i>
+                                <p>Good start! You're learning about computers! Review the answers to learn more!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="results-actions">
+                            <button class="btn-view-answers" id="view-answers-btn">
+                                <i class="fas fa-eye"></i>
+                                View Answers
+                            </button>
+                            <button class="btn-next-form" id="next-form-btn">
+                                <i class="fas fa-arrow-right"></i>
+                                Next Form
+                            </button>
+                            <button class="btn-back-course" id="back-course-btn">
+                                <i class="fas fa-home"></i>
+                                Back to Course
+                            </button>
+                        </div>
+                        
+                        <div class="certificate-preview">
+                            <div class="certificate-info">
+                                <i class="fas fa-award"></i>
+                                <div>
+                                    <h4>Certificate Progress</h4>
+                                    <p>Complete all 3 forms to earn your Computer Basics Certificate</p>
+                                </div>
+                            </div>
+                            <div class="certificate-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 33%"></div>
+                                </div>
+                                <span>1 of 3 forms completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-timer" id="floating-timer" style="display: none;">
+            <div class="timer-content">
+                <i class="fas fa-clock"></i>
+                <div class="timer-info">
+                    <span class="timer-label">Time Remaining</span>
+                    <span class="timer-value" id="timer-display">15:00</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="floating-bonus" id="floating-bonus" style="display: none;">
+            <div class="bonus-content">
+                <i class="fas fa-gift"></i>
+                <div class="bonus-info">
+                    <span class="bonus-label">Time Bonus</span>
+                    <span class="bonus-value" id="time-bonus">+2 points</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Monkey Helper -->
+    <div class="monkey-helper" id="monkey-helper">
+        <div class="monkey-avatar">
+            <img src="img/monkey-avatar.png" alt="Monkey Helper">
+        </div>
+        <div class="monkey-message" id="monkey-message">
+            <p>Ready to learn about computers? Click Start Form to begin! 🐵</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="form-complete.js"></script>
+</body>
+</html>

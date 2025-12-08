@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./login&register.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="./images/logo.png" />
+  </head>
+  <body>
+    <form action="" method="post" id="loginForm">
+      <div class="img-container">
+        <img
+          width="500"
+          height="600"
+          src="./images/log-reg.png"
+          alt="Login Illustration"
+        />
+      </div>
+      <div class="information-container">
+        <div class="error-msg" id="errorMsg"></div>
+
+        <div class="form-content">
+          <h1>Login</h1>
+          <p class="register-link">
+            Don't have an account? <a href="./register.html">Register</a>
+          </p>
+
+          <div class="input-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              autocomplete="email"
+            />
+            <div class="input-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+              autocomplete="current-password"
+            />
+            <div class="input-icon">
+              <i class="fa-solid fa-eye hidden"></i>
+              <i class="fa-solid fa-eye-slash"></i>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <i class="fas fa-sign-in-alt"></i>
+            Login
+          </button>
+          <a></a>
+          <div class="divider">
+            <span>Or continue with</span>
+          </div>
+          <div class="social-login">
+            <a href="#" class="social-btn google">
+              <i class="fab fa-google"></i>
+              Google
+            </a>
+            <a href="#" class="social-btn apple">
+              <i class="fab fa-apple"></i>
+              Apple
+            </a>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script src="./login.js"></script>
+  </body>
+</html>

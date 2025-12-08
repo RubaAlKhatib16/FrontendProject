@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./home.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="./images/logo.png" />
+
+    <title>IT&Coding</title>
+  </head>
+  <body>
+    <!--header start-->
+    <nav class="navbar fixed-top header">
+      <div class="container">
+        <a class="logo" href="#"
+          ><img width="90" height="90" src="./images/log-reg.png"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">IT&Coding</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#technologies">Technologies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Contact</a>
+              </li>
+              <li class="nav-item log-reg">
+                <a
+                  class="nav-link register-btn"
+                  href="../login-register/register.html"
+                  >Register</a
+                >
+                <a
+                  class="nav-link login-btn"
+                  href="../login-register/login.html"
+                  >Login</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--header end-->
+
+    <!--main start-->
+    <section class="main">
+      <div class="btn">
+        <a href="#about" class="main-btn">Start Learning</a>
+        <a href="#footer" class="secondary-btn">Contact Info</a>
+      </div>
+    </section>
+    <!--main end-->
+
+    <!--about start-->
+    <section class="about" id="about">
+      <div>
+        <h2>Welcome to IT & Coding for Kids</h2>
+        <p class="about-desc">
+          At IT Coding, we provide age-friendly tech challenges designed to test
+          and grow your digital skills. Instead of traditional lessons, our
+          platform focuses on interactive exams that adapt to each learner’s
+          level—whether they are children or young adults. These challenges help
+          users explore essential computer concepts in a simple, engaging, and
+          confidence-building way.
+        </p>
+        <div class="about-cards">
+          <div class="card">
+            <h3>Monkey IT Kids</h3>
+            <p class="card-desc">
+              Build a fun and friendly foundation in computer and tech skills.
+            </p>
+            <div class="about-list">
+              <p>
+                <span>Kid-Friendly Challenges</span><br />
+                Simple exams designed for younger learners.
+              </p>
+              <p>
+                <span>Fun & Interactive </span><br />
+                Engaging questions that make learning enjoyable
+              </p>
+              <p>
+                <span>Safe Learning Space</span><br />
+                A protected environment suitable for children.
+              </p>
+            </div>
+
+            <div class="btn-img">
+              <a href="../login-register/login.html">start the journey</a>
+              <img src="./images/monkey.png" width="80" height="80" />
+            </div>
+          </div>
+          <div class="card">
+            <h3>Monkey IT Kids</h3>
+            <p class="card-desc">
+              Build a fun and friendly foundation in computer and tech skills.
+            </p>
+            <div class="about-list">
+              <p>
+                <span>Skill-Level Exams</span><br />
+                Tech challenges tailored to match your current abilities.
+              </p>
+              <p>
+                <span>Problem-Solving Growth</span><br />
+                Exercises that strengthen logical and analytical thinking
+              </p>
+              <p>
+                <span>Digital Literacy Boost </span><br />
+                Builds essential computer skills for real-world use
+              </p>
+            </div>
+
+            <div class="btn-img">
+              <a href="../login-register/login.html">start the journey</a>
+              <img src="./images/boy.png" width="80" height="80" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--about end-->
+
+    <!-- features start-->
+    <section class="features" id="features">
+      <div>
+        <h2>Why You’ll Love Learning with IT & Coding</h2>
+        <div class="features-cards">
+          <div class="features-card">
+            <img src="./images/activeleaning.png" width="90" height="90" />
+            <span>Skill Growth</span>
+          </div>
+
+          <div class="features-card">
+            <img
+              src="./images/Practical Tech Skills.png"
+              width="90"
+              height="90"
+            />
+            <span>Fun Learning</span>
+          </div>
+
+          <div class="features-card">
+            <img
+              src="./images/Age-Friendly Content.png"
+              width="90"
+              height="90"
+            />
+            <span>Code Skills </span>
+          </div>
+
+          <div class="features-card">
+            <img src="./images/true.png" width="90" height="90" />
+            <span>Age Friendly </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- features end-->
+
+    <!--technologies start-->
+    <section id="technologies" class="technologies">
+      <div>
+        <h2>Technologies We Use</h2>
+        <p>
+          We built our platform using modern and reliable web technologies to
+          ensure speed, security, and a smooth learning experience for all
+          users.
+        </p>
+        <div class="tech-images">
+          <!-- JAVASCRIPT -->
+
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript"
+            width="80"
+            height="80"
+          />
+
+          <!-- HTML -->
+
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+            alt="HTML5"
+            width="80"
+            height="80"
+          />
+
+          <!-- CSS -->
+
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+            alt="CSS3"
+            width="80"
+            height="80"
+          />
+
+          <!-- Bootstrap -->
+
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+            alt="Bootstrap"
+            width="80"
+            height="80"
+          />
+        </div>
+      </div>
+    </section>
+    <!--technologies end-->
+
+    <!--quotes  start-->
+    <section class="quotes" id="quotes">
+      <div class="quotes-content">
+        <div>
+          <img src="./images/quotes.png" width="30px" height="30px" />
+          <img src="./images/quotes.png" width="30px" height="30px" />
+        </div>
+        <article></article>
+        <div>
+          <img src="./images/quotes.png" width="30px" height="30px" />
+          <img src="./images/quotes.png" width="30px" height="30px" />
+        </div>
+        <input type="button" value="Generate quotes" />
+        <hr />
+        <p>Quote Of The Day</p>
+      </div>
+
+      <img src="./images/brain.png" class="brain-img" width="200" />
+    </section>
+    <!--quotes  end-->
+
+    <!--footer  start-->
+    <footer id="footer" class="footer">
+      <div class="footer-content">
+        <div class="quick-links">
+          <h3>Quick Links</h3>
+          <div class="quicklinks-content">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#technologies">Technologies</a>
+          </div>
+        </div>
+        <div class="learning-topics">
+          <h3>Learning Topics</h3>
+          <div class="learningTopics-content">
+            <p>Computer Basics and Advanced Quiz</p>
+            <p>Programming Challenge</p>
+            <p>Internet Safety for Kids</p>
+          </div>
+        </div>
+        <div class="contact-us">
+          <h3>Contact Us</h3>
+          <div class="contactus-content">
+            <p>Email: info@IT&Coding.com</p>
+            <p>WhatsApp: +962 79 870 6042</p>
+            <p>Location: Amman, Jordan</p>
+            <div class="social-icons">
+              <i class="fa-brands fa-square-whatsapp"></i>
+              <i class="fa-brands fa-square-facebook"></i>
+              <i class="fa-brands fa-linkedin"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="copy-right">© 2025 IT&Coding — All Rights Reserved.</p>
+    </footer>
+    <!--footer  end-->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Development Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-quiz">
+    <header class="quiz-header">
+      <div class="container quiz-header-inner">
+        <div class="quiz-logo">
+          <!-- Picture 14: small logo -->
+          <img src="images/web.png" alt="Logo" />
+          <span>Web Development Quiz</span>
+        </div>
+        <div class="quiz-meta">
+          <span>Test Your Skills!</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container quiz-main">
+      <div class="quiz-user-bar">
+        <span>Signed in as: user@email.com</span>
+        <span>Youth Level</span>
+      </div>
+
+      <form class="quiz-form" id="webDevQuiz">
+        <!-- Q1 -->
+        <div class="quiz-question">
+          <p>
+            <strong>Q1)</strong> Which of the following elements provides
+            meaningful structure to a webpage?
+          </p>
+          <label><input type="radio" name="q1" value="a" /> &lt;div&gt;</label>
+          <label><input type="radio" name="q1" value="b" /> &lt;span&gt;</label>
+          <label
+            ><input type="radio" name="q1" value="c" /> &lt;header&gt;</label
+          >
+          <label><input type="radio" name="q1" value="d" /> &lt;b&gt;</label>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-question">
+          <p>
+            <strong>Q2)</strong> Which CSS property is used to create a
+            responsive layout using flexible columns?
+          </p>
+          <label><input type="radio" name="q2" value="a" /> position</label>
+          <label
+            ><input type="radio" name="q2" value="b" /> display:
+            inline-block</label
+          >
+          <label
+            ><input type="radio" name="q2" value="c" /> display: flex</label
+          >
+          <label><input type="radio" name="q2" value="d" /> text-align</label>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-question">
+          <p><strong>Q3)</strong> What is the output of the following code?</p>
+          <pre><code>console.log(typeof "42");</code></pre>
+          <label><input type="radio" name="q3" value="a" /> number</label>
+          <label><input type="radio" name="q3" value="b" /> "undefined"</label>
+          <label><input type="radio" name="q3" value="c" /> "string"</label>
+          <label><input type="radio" name="q3" value="d" /> object</label>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quiz-question">
+          <p>
+            <strong>Q4)</strong> Which method is used to select the first
+            element that matches a CSS selector?
+          </p>
+          <label
+            ><input type="radio" name="q4" value="a" /> getElementById()</label
+          >
+          <label
+            ><input type="radio" name="q4" value="b" /> querySelector()</label
+          >
+          <label
+            ><input type="radio" name="q4" value="c" />
+            querySelectorAll()</label
+          >
+          <label
+            ><input type="radio" name="q4" value="d" />
+            getElementsByClassName()</label
+          >
+        </div>
+
+        <div class="quiz-submit-bar">
+          <button
+            type="button"
+            class="primary-btn"
+            onclick="submitQuiz('webDevQuiz')"
+          >
+            Submit Answers
+          </button>
+          <p id="webDevQuizResult" class="quiz-result"></p>
+        </div>
+      </form>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

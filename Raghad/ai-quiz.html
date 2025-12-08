@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI & Robotics Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-quiz">
+    <header class="quiz-header">
+      <div class="container quiz-header-inner">
+        <div class="quiz-logo">
+          <img src="images/robotics.png" alt="Logo" />
+          <span>AI &amp; Robotics Quiz</span>
+        </div>
+        <div class="quiz-meta">
+          <span>Test Your Skills!</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container quiz-main">
+      <div class="quiz-user-bar">
+        <span>Signed in as: user@email.com</span>
+        <span>Youth Level</span>
+      </div>
+
+      <form class="quiz-form" id="aiQuiz">
+        <!-- Q1 -->
+        <div class="quiz-question">
+          <p><strong>Q1)</strong> What does “AI” mainly focus on?</p>
+          <label
+            ><input type="radio" name="q1" value="a" /> Making computers
+            faster</label
+          >
+          <label
+            ><input type="radio" name="q1" value="b" /> Giving computers the
+            ability to learn and make decisions</label
+          >
+          <label
+            ><input type="radio" name="q1" value="c" /> Designing better
+            screens</label
+          >
+          <label
+            ><input type="radio" name="q1" value="d" /> Building physical robots
+            only</label
+          >
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-question">
+          <p>
+            <strong>Q2)</strong> Which of the following is an example of
+            “Machine Learning”?
+          </p>
+          <label
+            ><input type="radio" name="q2" value="a" /> A robot with
+            wheels</label
+          >
+          <label
+            ><input type="radio" name="q2" value="b" /> A smartwatch that
+            suggests your music preferences</label
+          >
+          <label
+            ><input type="radio" name="q2" value="c" /> A keyboard with RGB
+            lights</label
+          >
+          <label
+            ><input type="radio" name="q2" value="d" /> A smartphone display
+            turning on</label
+          >
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-question">
+          <p><strong>Q3)</strong> What sensor helps robots detect distance?</p>
+          <label><input type="radio" name="q3" value="a" /> Microphone</label>
+          <label
+            ><input type="radio" name="q3" value="b" /> Ultrasonic sensor</label
+          >
+          <label
+            ><input type="radio" name="q3" value="c" /> Temperature
+            sensor</label
+          >
+          <label><input type="radio" name="q3" value="d" /> Speaker</label>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quiz-question">
+          <p>
+            <strong>Q4)</strong> A line-following robot is most inspired by:
+          </p>
+          <label><input type="radio" name="q4" value="a" /> Human brain</label>
+          <label><input type="radio" name="q4" value="b" /> Solar panels</label>
+          <label
+            ><input type="radio" name="q4" value="c" /> Ants following a
+            trail</label
+          >
+          <label
+            ><input type="radio" name="q4" value="d" /> Chemical
+            reactions</label
+          >
+        </div>
+
+        <div class="quiz-submit-bar">
+          <button
+            type="button"
+            class="primary-btn"
+            onclick="submitQuiz('aiQuiz')"
+          >
+            Submit Answers
+          </button>
+          <p id="aiQuizResult" class="quiz-result"></p>
+        </div>
+      </form>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

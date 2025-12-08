@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Basics - Monkey IT Kids</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background Decorations -->
+    <div class="form-background">
+        <div class="decoration-banana banana-1">🍌</div>
+        <div class="decoration-banana banana-2">🍌</div>
+        <div class="decoration-leaf leaf-1"></div>
+        <div class="decoration-leaf leaf-2"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="form-header">
+        <div class="header-left">
+            <img src="img/logo.png" class="logo" alt="Monkey IT Kids Logo">
+            <div class="header-info">
+                <h1 class="form-course">Computer Basics</h1>
+                <p class="form-subtitle">Learn about computers in a fun way!</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span class="progress-label">Progress</span>
+                    <span class="question-counter">Question <span id="current-question">1</span> of 10</span>
+                </div>
+                <div class="circular-progress">
+                    <svg width="80" height="80">
+                        <circle class="progress-bg" cx="40" cy="40" r="36"></circle>
+                        <circle class="progress-fill" cx="40" cy="40" r="36"></circle>
+                    </svg>
+                    <div class="progress-percent" id="progress-text">0%</div>
+                </div>
+            </div>
+
+            <div class="score-display">
+                <div class="banana-score">
+                    <span class="banana-icon">🍌</span>
+                    <span id="banana-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="form-container">
+        <!-- Question Section -->
+        <section class="question-section">
+            <div class="question-header">
+                <div class="question-number">
+                    <span class="number-circle">1</span>
+                    <span class="difficulty-tag">Easy</span>
+                </div>
+                <div class="question-timer">
+                    <i class="fas fa-clock"></i>
+                    <span id="timer">00:30</span>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="question-icon">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h2 id="question-text" class="question-text">
+                    What is a computer?
+                </h2>
+                <div class="question-hint">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Hint: It's an electronic device that can store and process information</span>
+                </div>
+            </div>
+
+            <!-- Feedback Message -->
+            <div id="feedback-message" class="feedback-message">
+                <div class="feedback-content">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Great choice! Computers are indeed machines that store and process information.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Options Section -->
+        <section class="options-section">
+            <h3 class="options-title">Choose the correct answer:</h3>
+            
+            <div class="options-grid">
+                <button class="option" data-correct="true">
+                    <div class="option-letter">A</div>
+                    <div class="option-content">
+                        <p class="option-text">A machine that stores and processes information</p>
+                        <div class="option-hint">
+                            <i class="fas fa-check"></i>
+                            <span>Correct Answer</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="option">
+                    <div class="option-letter">B</div>
+                    <div class="option-content">
+                        <p class="option-text">A type of fruit</p>
+                        <div class="option-hint">
+                            <i class="fas fa-times"></i>
+                            <span>That's a banana!</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="option">
+                    <div class="option-letter">C</div>
+                    <div class="option-content">
+                        <p class="option-text">A toy used for fun</p>
+                        <div class="option-hint">
+                            <i class="fas fa-times"></i>
+                            <span>Computers can be fun, but they're more than toys</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="option">
+                    <div class="option-letter">D</div>
+                    <div class="option-content">
+                        <p class="option-text">A musical instrument</p>
+                        <div class="option-hint">
+                            <i class="fas fa-times"></i>
+                            <span>You can make music with computers, but they're not instruments</span>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section class="controls-section">
+            <div class="controls-left">
+                <button id="hintBtn" class="hint-btn">
+                    <i class="fas fa-lightbulb"></i>
+                    Get Hint
+                </button>
+                <button id="soundBtn" class="sound-btn active">
+                    <i class="fas fa-volume-up"></i>
+                    Sound On
+                </button>
+            </div>
+
+            <div class="controls-center">
+                <div class="progress-bar">
+                    <div class="progress-track">
+                        <div class="progress-current"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span>Start</span>
+                        <span>50%</span>
+                        <span>Finish</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-right">
+                <button id="backBtn" class="back-btn" disabled>
+                    <i class="fas fa-arrow-left"></i>
+                    Previous
+                </button>
+                <button id="nextBtn" class="next-btn" disabled>
+                    Next Question
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Monkey Helper -->
+        <div class="monkey-helper">
+            <div class="monkey-avatar">
+                <img src="img/monkey.png" alt="Monkey Helper">
+            </div>
+            <div class="monkey-speech" id="monkey-speech">
+                Pick the best answer! You can do it! 🐵
+            </div>
+        </div>
+    </main>
+
+    <!-- Celebration Modal -->
+    <div id="celebration-modal" class="celebration-modal">
+        <div class="celebration-content">
+            <div class="celebration-header">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+            </div>
+            <div class="celebration-body">
+                <h2>🎉 Excellent! 🎉</h2>
+                <p>You got the right answer!</p>
+                <div class="reward-earned">
+                    <div class="reward-icon">🍌</div>
+                    <div class="reward-info">
+                        <h3>+1 Banana Earned!</h3>
+                        <p>Keep learning to earn more bananas!</p>
+                    </div>
+                </div>
+                <button id="continueBtn" class="continue-btn">
+                    Continue Learning
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kids</title>
+
+<style>
+.card{
+    background:#fff6c7;
+    border-radius:12px;
+    padding:20px;
+    width:200px;
+    margin:10px;
+    border:2px solid #c8a74a;
+}
+.container{
+    display:flex;
+    flex-wrap:wrap;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Kids Forms</h2>
+
+<div class="container" id="cardsContainer"></div>
+
+
+
+
+<script>
+let forms = JSON.parse(localStorage.getItem("forms")) || [];
+
+const container = document.getElementById("cardsContainer");
+
+forms.forEach(f => {
+    container.innerHTML += `
+    <div class="card">
+        <h3>${f.title}</h3>
+        <p>${f.description}</p>
+        <button onclick="openForm(${f.id})">Start</button>
+    </div>
+    `;
+});
+function openForm(id){
+    window.location.href = `form.html?id=${id}`;
+}
+
+</script>
+
+</body>
+</html>

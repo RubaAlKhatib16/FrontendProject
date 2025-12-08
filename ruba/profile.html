@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Monkey IT Kids</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&family=Fredoka:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img/banana-removebg-preview.png">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-content">
+            <!-- Logo on Left -->
+            <div class="left-side">
+                <img src="img/logo.png" class="nav-logo" alt="Monkey IT Kids Logo">
+                <div class="nav-brand">
+                    <span class="brand-name">Monkey IT Kids</span>
+                    <span class="brand-sub">Learning Through Forms</span>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="right-side">
+                <div class="profile-badge">
+                    <img src="img/profile1.png" class="nav-profile" alt="Child Profile">
+                    <span class="notification-dot"></span>
+                </div>
+                <button id="burger" class="burger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="img/profile1.png" alt="Profile">
+                <h3 id="sidebarUserName">Hi, Child!</h3>
+            </div>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="profile.html" class="active"><i class="fas fa-user"></i> My Account</a>
+            <a href="#"><i class="fas fa-file-alt"></i>Forms</a>
+            <a href="#"><i class="fas fa-star"></i> Why Us</a>
+            <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+            <a href="#"><i class="fas fa-unlock"></i> Free Access</a>
+            <button class="signout-btn" onclick="window.location.href='../hamza/home-page/index.html'"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="profile-container">
+        <!-- WELCOME SECTION -->
+        <section class="welcome-section">
+            <div class="welcome-card">
+                <div class="welcome-content">
+                    <div class="avatar-container">
+                        <img src="img/ChatGPT Image Dec 3, 2025, 06_51_45 PM.png" class="main-avatar" alt="Your Avatar">
+                        <div class="level-badge">Level 1</div>
+                    </div>
+                    <div class="welcome-text">
+                        <h1 id="welcomeUserName">Welcome Back, <span class="highlight">Child!</span></h1>
+                        <p class="welcome-message">Ready to continue your IT adventure? Let's complete more forms and
+                            earn bananas!</p>
+                        <div class="daily-streak">
+                            <i class="fas fa-fire"></i>
+                            <span>Daily Streak: <strong>3 days</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="monkey-friend">
+                    <img src="img/monkey.png" alt="Monkey Friend">
+                    <div class="speech-bubble">Great job so far!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRESS & CURRENT FORM -->
+        <section class="progress-section">
+            <h2 class="section-title">Current Learning Journey</h2>
+
+            <div class="progress-card">
+                <div class="progress-header">
+                    <h3>Programming Basics Challenge</h3>
+                    <span class="form-tag">Beginner</span>
+                </div>
+
+                <div class="progress-details">
+                    <div class="progress-visual">
+                        <div class="circular-progress">
+                            <div class="progress-ring">
+                                <svg width="120" height="120">
+                                    <circle class="progress-circle-bg" cx="60" cy="60" r="54" />
+                                    <circle class="progress-circle" cx="60" cy="60" r="54" stroke-dasharray="339.292"
+                                        stroke-dashoffset="237.504" />
+                                </svg>
+                                <div class="progress-percent">30%</div>
+                            </div>
+                        </div>
+                        <div class="progress-info">
+                            <div class="progress-stat">
+                                <i class="fas fa-check-circle"></i>
+                                <span>3/10 Forms Completed</span>
+                            </div>
+                            <div class="progress-stat">
+                                <i class="fas fa-banana"></i>
+                                <span>Bananas Earned: <strong>5</strong></span>
+                            </div>
+                            <div class="progress-stat">
+                                <i class="fas fa-clock"></i>
+                                <span>Time Spent: 45 min</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievements-display">
+                        <h4>Your Achievements</h4>
+                        <div class="achievements-list">
+                            <div class="achievement">
+                                <div class="achievement-icon">🥇</div>
+                                <div class="achievement-info">
+                                    <h5>First Form Completed</h5>
+                                    <p>Started your IT journey!</p>
+                                </div>
+                            </div>
+                            <div class="achievement">
+                                <div class="achievement-icon">💻</div>
+                                <div class="achievement-info">
+                                    <h5>Mouse Master</h5>
+                                    <p>Perfect mouse control</p>
+                                </div>
+                            </div>
+                            <div class="achievement locked">
+                                <div class="achievement-icon">🔒</div>
+                                <div class="achievement-info">
+                                    <h5>Keyboard Ninja</h5>
+                                    <p>Complete 5 more forms</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="continue-btn">
+                    <i class="fas fa-play"></i> Continue Learning Forms
+                </button>
+            </div>
+        </section>
+
+        <!-- PROFILE CUSTOMIZATION -->
+        <section class="customize-section">
+            <h2 class="section-title">Customize Your Profile</h2>
+
+            <div class="customize-card">
+                <div class="avatar-customization">
+                    <h3><i class="fas fa-user-astronaut"></i> Choose Your Avatar</h3>
+                    <p>Select a character that represents you!</p>
+
+                    <div class="avatar-gallery">
+                        <div class="avatar-option selected">
+                            <img src="img/A1.png" alt="Avatar 1">
+                            <span class="avatar-name">Code Monkey</span>
+                        </div>
+                        <div class="avatar-option">
+                            <img src="img/ChatGPT Image Dec 3, 2025, 06_51_45 PM.png" alt="Avatar 2">
+                            <span class="avatar-name">Tech Explorer</span>
+                        </div>
+                        <div class="avatar-option">
+                            <img src="img/Happy-Gordo.png" alt="Avatar 3">
+                            <span class="avatar-name">Keyboard Hero</span>
+                        </div>
+                        <div class="avatar-option">
+                            <img src="img/ChatGPT_Image_Dec_5__2025__12_12_38_PM1-removebg-preview.png" alt="Avatar 4">
+                            <span class="avatar-name">Robot Friend</span>
+                        </div>
+                        <div class="avatar-option">
+                            <img src="img/ChatGPT_Image_Dec_5__2025__12_12_39_PM33-removebg-preview.png" alt="Avatar 5">
+                            <span class="avatar-name">AI Assistant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <h3><i class="fas fa-user-edit"></i> Your Information</h3>
+
+                    <div class="form-group">
+                        <label for="username"><i class="fas fa-user"></i> Username</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="username" value="SuperCoder2024"
+                                placeholder="Choose a cool username">
+                            <i class="fas fa-edit edit-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parent-email"><i class="fas fa-envelope"></i> Parent's Email</label>
+                        <div class="input-with-icon">
+                            <input type="email" id="parent-email" value="parent@email.com"
+                                placeholder="Your parent's email">
+                            <i class="fas fa-edit edit-icon"></i>
+                        </div>
+                        <small>We'll send progress updates here</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-birthday-cake"></i> Your Age</label>
+                        <div class="age-selector">
+                            <button class="age-option">6-8</button>
+                            <button class="age-option selected">9-11</button>
+                            <button class="age-option">12+</button>
+                        </div>
+                    </div>
+
+                    <button class="save-btn">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOMMENDED FORMS -->
+        <!--<section class="recommended-section">
+            <div class="section-header">
+                <h2 class="section-title">Recommended Forms For You</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="forms-grid">
+                <div class="form-card">
+                    <div class="form-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Computer Basics Quiz</h3>
+                    <p>Learn about computer parts and how they work</p>
+                    <div class="form-difficulty">
+                        <span class="difficulty easy">Easy</span>
+                        <span class="time"><i class="far fa-clock"></i> 15 min</span>
+                    </div>
+                    <div class="form-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span>0% Complete</span>
+                    </div>
+                    <button class="start-form-btn">
+                        <i class="fas fa-play"></i> Start Form
+                    </button>
+                </div>
+
+                <div class="form-card">
+                    <div class="form-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Internet Safety Adventure</h3>
+                    <p>Learn how to stay safe online</p>
+                    <div class="form-difficulty">
+                        <span class="difficulty medium">Medium</span>
+                        <span class="time"><i class="far fa-clock"></i> 20 min</span>
+                    </div>
+                    <div class="form-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span>0% Complete</span>
+                    </div>
+                    <button class="start-form-btn">
+                        <i class="fas fa-play"></i> Start Form
+                    </button>
+                </div>
+
+                <div class="form-card">
+                    <div class="form-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Game Development Intro</h3>
+                    <p>Create your first simple game</p>
+                    <div class="form-difficulty">
+                        <span class="difficulty medium">Medium</span>
+                        <span class="time"><i class="far fa-clock"></i> 25 min</span>
+                    </div>
+                    <div class="form-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span>0% Complete</span>
+                    </div>
+                    <button class="start-form-btn">
+                        <i class="fas fa-play"></i> Start Form
+                    </button>
+                </div>
+
+                <div class="form-card">
+                    <div class="form-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Robots Exploration</h3>
+                    <p>Discover how robots think</p>
+                    <div class="form-difficulty">
+                        <span class="difficulty hard">Hard</span>
+                        <span class="time"><i class="far fa-clock"></i> 30 min</span>
+                    </div>
+                    <div class="form-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span>0% Complete</span>
+                    </div>
+                    <button class="start-form-btn">
+                        <i class="fas fa-play"></i> Start Form
+                    </button>
+                </div>
+            </div>
+        </section>
+    -->
+        <!-- STATS & REWARDS -->
+        <section class="stats-section">
+            <h2 class="section-title">🏆 Your Learning Stats</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon total-forms">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Forms Completed</h3>
+                        <div class="stat-number">3</div>
+                        <p>Keep going to unlock more!</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon bananas">🍌
+
+                        <i class="fas fa-banana"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Bananas Earned</h3>
+                        <div class="stat-number">15</div>
+                        <p>Your learning currency</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon time-spent">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Learning Time</h3>
+                        <div class="stat-number">2h 15m</div>
+                        <p>Great dedication!</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon streak">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Current Streak</h3>
+                        <div class="stat-number">3 days</div>
+                        <p>Don't break the chain!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banana Bank -->
+            <div class="banana-bank">
+                <div class="bank-header">
+                    <h3><i class="fas fa-piggy-bank"></i> Your Banana Bank</h3>
+                    <div class="banana-count">15 🍌</div>
+                </div>
+                <p>Use bananas to unlock special avatars and rewards!</p>
+                <button class="shop-btn">
+                    <i class="fas fa-store"></i> Visit Reward Shop
+                </button>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section brand">
+            <img src="img/logo.png" class="footer-logo">
+            <h2>Monkey IT Kids</h2>
+            <p>Your child’s first step into the world of technology</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">FAQ</a>
+            <a href="#">Why Us</a>
+            <a href="#">Free Access</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Learning Topics</h3>
+            <a href="#">Computer Basics Quiz</a>
+            <a href="#">Programming Basics Challenge</a>
+            <a href="#">Internet Safety for Kids</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: info@monkeyitkids.com</p>
+            <p>WhatsApp: +962 79 870 6042</p>
+            <p>Orange Coding School</p>
+            <p>Amman, Jordan</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Monkey IT Kids — All Rights Reserved.
+    </div>
+</footer>
+
+    <script src="imageService.js.js"></script>
+    <script src="avatarStorage.js.js"></script>
+    <script src="profile.js"></script>
+</body>
+
+</html>

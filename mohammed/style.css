@@ -1,0 +1,118 @@
+body {
+  margin:0; 
+  font-family:Arial,sans-serif; 
+  background:#f6f8fb; 
+  display:flex; 
+}
+.sidebar { 
+  width:240px; 
+  height:auto; 
+  min-height: 100vh; 
+  overflow-y: auto; 
+  background:#0f172a; 
+  color:white; 
+  padding:20px; 
+  flex-shrink:0; 
+  transition: all 0.3s; 
+}
+.sidebar.hidden { 
+  width:0; 
+  padding:0; 
+  overflow:hidden; 
+}
+.sidebar h2 { 
+  text-align:center; 
+}
+.sidebar ul { 
+  padding:0; 
+  list-style:none; 
+}
+.sidebar li a { 
+  display:block; 
+  padding:12px; 
+  color:white; 
+  text-decoration:none; 
+  border-radius:8px; 
+}
+.sidebar li.active a, 
+.sidebar li a:hover { 
+  background:#2563eb; 
+}
+.hamburger { 
+  position:fixed; 
+  top:15px; 
+  left:15px; 
+  font-size:28px; 
+  color:#2563eb; 
+  cursor:pointer; 
+  z-index:1000; }
+.content { 
+  flex:1; 
+  padding:25px; 
+  transition: all 0.3s ease; 
+}
+.cards { 
+  display:grid; 
+  grid-template-columns:repeat(3,1fr); 
+  gap:15px; 
+}
+.card { 
+  background:white; 
+  padding:20px; 
+  border-radius:12px; 
+  display:flex; 
+  align-items:center; 
+  gap:15px; }
+.card i { 
+  font-size:40px; 
+  color:#2563eb; 
+}
+.table-box { 
+  background:white; 
+  margin-top:25px; 
+  padding:20px; 
+  border-radius:12px; 
+}
+table { 
+  width:100%; 
+  border-collapse:collapse; 
+}
+th { 
+  background:#2563eb; 
+  color:white; 
+  padding:10px; 
+}
+td { 
+  padding:10px; 
+  border-bottom:1px solid #eee; 
+}
+.btn { 
+  background:#2563eb; 
+  color:white; border:none; padding:10px 15px; border-radius:8px; cursor:pointer; }
+.choose-box { margin:15px 0; display:none; gap:10px; }
+.choose-box {
+  display: none; 
+  margin: 15px 0;
+  gap: 10px;
+}
+
+.choose-box button.kids {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.choose-box button.youth {
+  background-color: #2563eb; 
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+

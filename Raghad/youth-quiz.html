@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Youth Quiz - TechSphere</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page-quiz">
+    <header class="quiz-header">
+      <div class="container quiz-header-inner">
+        <a href="youth.html" class="quiz-logo">
+          <img src="images/logo-1.jpeg" alt="TechSphere Logo" />
+          <span id="quizTitle">Youth Quiz</span>
+        </a>
+        <div class="quiz-meta">
+          <span id="quizStatus">Test Your Skills!</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container quiz-main">
+      <div class="quiz-user-bar">
+        <span id="userEmail">Signed in as: user@email.com</span>
+        <span id="userLevel">Youth Level</span>
+        <div class="quiz-timer" id="quizTimer" style="display: none">
+          <i class="far fa-clock"></i> <span id="time">30:00</span>
+        </div>
+      </div>
+
+      <div id="quizLoading" style="text-align: center; padding: 3rem">
+        <div style="font-size: 3rem; margin-bottom: 1rem">⏳</div>
+        <h3>Loading Quiz...</h3>
+        <p>Please wait while we prepare your assessment.</p>
+      </div>
+
+      <form class="quiz-form" id="dynamicQuizForm" style="display: none">
+        <!-- Questions will be dynamically inserted here -->
+      </form>
+
+      <div
+        id="quizError"
+        style="display: none; text-align: center; padding: 3rem"
+      >
+        <div style="font-size: 3rem; margin-bottom: 1rem">❌</div>
+        <h3>Quiz Not Available</h3>
+        <p id="errorMessage">The requested quiz could not be loaded.</p>
+        <a href="youth.html" class="btn btn-primary" style="margin-top: 1rem">
+          <i class="fas fa-arrow-left"></i> Back to Programs
+        </a>
+      </div>
+    </main>
+
+    <script src="youth-quiz.js"></script>
+  </body>
+</html>

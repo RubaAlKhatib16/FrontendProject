@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Test</title>
+</head>
+
+<body>
+
+    <h2 id="questionText"></h2>
+
+    <div id="optionsContainer"></div>
+
+    <button onclick="nextQuestion()">Next</button>
+
+    <script>
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        const forms = JSON.parse(localStorage.getItem("forms"));
+        const currentForm = forms.find(f => f.id == id);
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            let q = currentForm.questions[currentQuestion];
+
+            document.getElementById("questionText").innerText = q.text;
+
+            let html = "";
+
+            q.answers.forEach((op, index) => {
+                html += `<button onclick="selectAnswer(${index})">${op.text}</button>`;
+            });
+
+            document.getElementById("optionsContainer").innerHTML = html;
+        }
+
+        function selectAnswer(answerIndex) {
+            const q = currentForm.questions[currentQuestion];
+            const selected = q.answers[answerIndex];
+
+            if (selected.correct) {
+                alert("✅ إجابة صحيحة");
+                score++;
+            } else {
+                alert("❌ إجابة خاطئة");
+            }
+
+            // نروح للسؤال اللي بعده مباشرة
+            nextQuestion();
+        }
+
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < currentForm.questions.length) {
+                loadQuestion();
+            } else {
+                alert("Done!");
+            }
+        }
+
+        loadQuestion();
+
+    </script>
+
+</body>
+
+</html>

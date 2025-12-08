@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<i class='bx bx-menu hamburger' id="hamburgerBtn"></i>
+
+<aside class="sidebar" id="sidebar">
+  <h2><i class='bx bxs-school'></i> Admin</h2>
+  <ul>
+    <li class="active"><a href="dashboardadmin.html"><i class='bx bx-grid-alt'></i> Dashboard</a></li>
+    <li><a href="createn-new-form.html"><i class='bx bx-plus-circle'></i> Create New Form</a></li>
+    <li><a href="kids-form.html"><i class='bx bx-child'></i> Kids Forms</a></li>
+    <li><a href="youth-form.html"><i class='bx bx-user'></i> Youth Forms</a></li>
+    <li><a href="../hamza/home-page/index.html"><i class='bx bx-log-out'></i> Log Out</a></li>
+  </ul>
+</aside>
+
+<main class="content">
+
+  <!-- CARDS -->
+  <div class="cards">
+    <div class="card">
+      <i class='bx bx-user'></i>
+      <div>
+        <h3 id="totalStudents">0</h3>
+        <p>Total Students</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <i class='bx bx-file'></i>
+      <div>
+        <h3 id="totalKids">0</h3>
+        <p>Total Forms – Kids</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <i class='bx bx-file'></i>
+      <div>
+        <h3 id="totalYouth">0</h3>
+        <p>Total Forms – Youth</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ STUDENTS TABLE -->
+  <div class="table-box">
+    <h3>Students Results</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student Name</th>
+          <th>Category</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody id="studentsTable">
+        <!-- JS will fill this -->
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

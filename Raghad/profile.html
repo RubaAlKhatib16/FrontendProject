@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Profile – TechSphere Academy</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="page-profile">
+    <header class="top-bar">
+      <div class="container top-bar-inner">
+        <a href="youth.html" class="logo">
+          <img src="images/logo-1.jpeg" alt="TechSphere Academy Logo" />
+          <span>TechSphere</span>
+        </a>
+        <nav class="top-nav">
+          <a href="youth.html"><i class="fas fa-home"></i> Home</a>
+          <a href="profile.html" style="color: var(--primary)">
+            <i class="fas fa-user"></i> Profile
+          </a>
+          <a href="#" class="btn-secondary" style="padding: 0.5rem 1rem">
+            <i class="fas fa-sign-out-alt"></i> Log Out
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container profile-main">
+      <!-- Left Sidebar - Profile Overview -->
+      <section class="profile-card">
+        <div class="profile-header">
+          <img
+            src="images/profile1.png"
+            alt="User avatar"
+            class="profile-avatar"
+          />
+          <h2>Alex Johnson</h2>
+          <p><i class="fas fa-envelope"></i> alex.johnson@email.com</p>
+          <p><i class="fas fa-calendar-alt"></i> Member since March 2024</p>
+          <p><i class="fas fa-graduation-cap"></i> Youth Program</p>
+
+          <!-- Progress Circle -->
+          <div class="track-progress" style="margin: 2rem auto">
+            <svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="40"></circle>
+              <circle
+                class="fill"
+                cx="50"
+                cy="50"
+                r="40"
+                stroke-dasharray="251.2"
+                stroke-dashoffset="75.36"
+              ></circle>
+            </svg>
+            <div class="track-percentage">70%</div>
+          </div>
+          <p style="font-weight: 500; color: var(--dark)">Overall Progress</p>
+        </div>
+
+        <div class="profile-stats">
+          <div class="stat">
+            <div class="stat-value">8</div>
+            <div class="stat-label">Quizzes Taken</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">85%</div>
+            <div class="stat-label">Avg. Score</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">15</div>
+            <div class="stat-label">Learning Hours</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Skills Mastered</div>
+          </div>
+        </div>
+
+        <!-- Achievement Badges -->
+        <div style="margin: 1.5rem 0">
+          <h4 style="margin-bottom: 1rem; color: var(--dark)">
+            <i class="fas fa-trophy"></i> Achievements
+          </h4>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.5rem;
+              justify-content: center;
+            "
+          >
+            <span
+              style="
+                background: gold;
+                color: black;
+                padding: 0.5rem 1rem;
+                border-radius: 50px;
+                font-size: 0.75rem;
+                font-weight: 600;
+              "
+            >
+              🏆 Quiz Master
+            </span>
+            <span
+              style="
+                background: silver;
+                color: black;
+                padding: 0.5rem 1rem;
+                border-radius: 50px;
+                font-size: 0.75rem;
+                font-weight: 600;
+              "
+            >
+              ⚡ Quick Learner
+            </span>
+            <span
+              style="
+                background: #cd7f32;
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 50px;
+                font-size: 0.75rem;
+                font-weight: 600;
+              "
+            >
+              🌟 Consistent
+            </span>
+          </div>
+        </div>
+
+        <div class="profile-actions">
+          <button
+            class="btn btn-secondary"
+            onclick="showToast('Profile edit mode activated', 'success')"
+          >
+            <i class="fas fa-edit"></i> Edit Profile
+          </button>
+          <button
+            class="btn btn-secondary"
+            onclick="showToast('Password change requested', 'warning')"
+          >
+            <i class="fas fa-key"></i> Change Password
+          </button>
+          <button
+            class="btn btn-secondary"
+            onclick="showToast('Data export started', 'success')"
+          >
+            <i class="fas fa-download"></i> Export Data
+          </button>
+          <button
+            class="btn danger-btn"
+            style="border-color: var(--danger); color: var(--danger)"
+            onclick="if(confirm('Are you sure you want to delete your account? This action cannot be undone.')) showToast('Account deletion scheduled', 'danger')"
+          >
+            <i class="fas fa-trash"></i> Delete Account
+          </button>
+        </div>
+      </section>
+
+      <!-- Main Content Area -->
+      <section class="profile-right">
+        <!-- Learning Progress Overview -->
+        <div class="profile-section">
+          <div class="section-header">
+            <h3>
+              <i class="fas fa-chart-line"></i> Learning Progress Overview
+            </h3>
+            <span class="status-badge completed">Active Learner</span>
+          </div>
+
+          <div class="progress-tracker">
+            <div class="track-item">
+              <div class="track-progress">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="40"></circle>
+                  <circle
+                    class="fill"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    stroke-dasharray="251.2"
+                    stroke-dashoffset="50.24"
+                  ></circle>
+                </svg>
+                <div class="track-percentage">80%</div>
+              </div>
+              <div class="track-label">Web Development</div>
+            </div>
+
+            <div class="track-item">
+              <div class="track-progress">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="40"></circle>
+                  <circle
+                    class="fill"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    stroke-dasharray="251.2"
+                    stroke-dashoffset="100.48"
+                  ></circle>
+                </svg>
+                <div class="track-percentage">60%</div>
+              </div>
+              <div class="track-label">AI & Robotics</div>
+            </div>
+
+            <div class="track-item">
+              <div class="track-progress">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="40"></circle>
+                  <circle
+                    class="fill"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    stroke-dasharray="251.2"
+                    stroke-dashoffset="175.84"
+                  ></circle>
+                </svg>
+                <div class="track-percentage">30%</div>
+              </div>
+              <div class="track-label">Backend Dev</div>
+            </div>
+
+            <div class="track-item">
+              <div class="track-progress">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="40"></circle>
+                  <circle
+                    class="fill"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    stroke-dasharray="251.2"
+                    stroke-dashoffset="226.08"
+                  ></circle>
+                </svg>
+                <div class="track-percentage">10%</div>
+              </div>
+              <div class="track-label">UI/UX Design</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="profile-section">
+          <div class="section-header">
+            <h3><i class="fas fa-history"></i> Recent Activity</h3>
+            <a href="#" style="font-size: 0.875rem; color: var(--primary)"
+              >View All</a
+            >
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem">
+            <div
+              class="activity-item"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem;
+                background: var(--light);
+                border-radius: var(--radius);
+              "
+            >
+              <div
+                style="
+                  width: 40px;
+                  height: 40px;
+                  background: var(--success);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                "
+              >
+                <i class="fas fa-check"></i>
+              </div>
+              <div style="flex: 1">
+                <strong>Completed Web Development Quiz</strong>
+                <div style="font-size: 0.875rem; color: var(--gray)">
+                  Scored 85% • Today, 10:30 AM
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="activity-item"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem;
+                background: var(--light);
+                border-radius: var(--radius);
+              "
+            >
+              <div
+                style="
+                  width: 40px;
+                  height: 40px;
+                  background: gold;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: black;
+                "
+              >
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div style="flex: 1">
+                <strong>Earned "Quiz Master" Badge</strong>
+                <div style="font-size: 0.875rem; color: var(--gray)">
+                  For completing 5 quizzes with 90%+ score • Yesterday
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="activity-item"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem;
+                background: var(--light);
+                border-radius: var(--radius);
+              "
+            >
+              <div
+                style="
+                  width: 40px;
+                  height: 40px;
+                  background: var(--primary);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                "
+              >
+                <i class="fas fa-play"></i>
+              </div>
+              <div style="flex: 1">
+                <strong>Started AI & Robotics Learning Path</strong>
+                <div style="font-size: 0.875rem; color: var(--gray)">
+                  Module 1: Introduction to AI • 2 days ago
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz History -->
+        <div class="profile-section">
+          <div class="section-header">
+            <h3><i class="fas fa-file-alt"></i> Quiz History</h3>
+            <div style="display: flex; gap: 0.5rem">
+              <select
+                style="
+                  padding: 0.25rem 0.5rem;
+                  border-radius: var(--radius);
+                  border: 1px solid var(--gray-light);
+                "
+              >
+                <option>All Categories</option>
+                <option>Web Development</option>
+                <option>AI & Robotics</option>
+                <option>Backend Development</option>
+              </select>
+              <select
+                style="
+                  padding: 0.25rem 0.5rem;
+                  border-radius: var(--radius);
+                  border: 1px solid var(--gray-light);
+                "
+              >
+                <option>All Time</option>
+                <option>Last 7 Days</option>
+                <option>Last 30 Days</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="overflow-x: auto">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Quiz Name</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  <th>Score</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Web Development Quiz</td>
+                  <td>Web Development</td>
+                  <td>2025-03-01</td>
+                  <td><strong>85%</strong></td>
+                  <td><span class="status-badge completed">Completed</span></td>
+                  <td>
+                    <a href="#" class="action-btn secondary">
+                      <i class="fas fa-eye"></i> Review
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>AI & Robotics Quiz</td>
+                  <td>AI & Robotics</td>
+                  <td>2025-03-02</td>
+                  <td><strong>92%</strong></td>
+                  <td><span class="status-badge completed">Completed</span></td>
+                  <td>
+                    <a href="#" class="action-btn secondary">
+                      <i class="fas fa-eye"></i> Review
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>JavaScript Fundamentals</td>
+                  <td>Web Development</td>
+                  <td>2025-03-03</td>
+                  <td><strong>78%</strong></td>
+                  <td><span class="status-badge completed">Completed</span></td>
+                  <td>
+                    <a href="#" class="action-btn secondary">
+                      <i class="fas fa-eye"></i> Review
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Python Basics</td>
+                  <td>AI & Robotics</td>
+                  <td>2025-03-04</td>
+                  <td><strong>65%</strong></td>
+                  <td><span class="status-badge pending">In Progress</span></td>
+                  <td>
+                    <a href="#" class="action-btn primary">
+                      <i class="fas fa-play"></i> Continue
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Database Design</td>
+                  <td>Backend Development</td>
+                  <td>2025-03-05</td>
+                  <td><strong>70%</strong></td>
+                  <td><span class="status-badge draft">Draft</span></td>
+                  <td>
+                    <a href="#" class="action-btn primary">
+                      <i class="fas fa-edit"></i> Edit
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Upcoming Quizzes -->
+        <div class="profile-section">
+          <div class="section-header">
+            <h3>
+              <i class="fas fa-calendar-alt"></i> Upcoming & Recommended Quizzes
+            </h3>
+            <a href="#" style="font-size: 0.875rem; color: var(--primary)"
+              >View Schedule</a
+            >
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 1rem;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+                padding: 1.5rem;
+                border-radius: var(--radius);
+                border-left: 4px solid var(--primary);
+              "
+            >
+              <h4 style="margin-bottom: 0.5rem; color: var(--dark)">
+                React Advanced Patterns
+              </h4>
+              <p
+                style="
+                  font-size: 0.875rem;
+                  color: var(--gray);
+                  margin-bottom: 1rem;
+                "
+              >
+                Master advanced React concepts and patterns
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <span style="font-size: 0.875rem; color: var(--primary)">
+                  <i class="far fa-clock"></i> 45 mins
+                </span>
+                <button
+                  class="action-btn primary"
+                  style="padding: 0.5rem 1rem; font-size: 0.875rem"
+                >
+                  <i class="fas fa-play"></i> Start
+                </button>
+              </div>
+            </div>
+
+            <div
+              style="
+                background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+                padding: 1.5rem;
+                border-radius: var(--radius);
+                border-left: 4px solid var(--warning);
+              "
+            >
+              <h4 style="margin-bottom: 0.5rem; color: var(--dark)">
+                Machine Learning Basics
+              </h4>
+              <p
+                style="
+                  font-size: 0.875rem;
+                  color: var(--gray);
+                  margin-bottom: 1rem;
+                "
+              >
+                Introduction to ML algorithms and concepts
+              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <span style="font-size: 0.875rem; color: var(--warning)">
+                  <i class="far fa-clock"></i> 60 mins
+                </span>
+                <button
+                  class="action-btn primary"
+                  style="
+                    padding: 0.5rem 1rem;
+                    font-size: 0.875rem;
+                    background: var(--warning);
+                  "
+                >
+                  <i class="fas fa-play"></i> Start
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+      // Toast notification function
+      function showToast(message, type = "success") {
+        const toast = document.createElement("div");
+        toast.className = `toast toast-${type}`;
+        toast.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-${
+                      type === "success"
+                        ? "check-circle"
+                        : type === "warning"
+                        ? "exclamation-triangle"
+                        : "exclamation-circle"
+                    }"></i>
+                    ${message}
+                </div>
+            `;
+        document.body.appendChild(toast);
+
+        setTimeout(() => toast.classList.add("show"), 100);
+        setTimeout(() => {
+          toast.classList.remove("show");
+          setTimeout(() => toast.remove(), 300);
+        }, 3000);
+      }
+
+      // Add CSS for toast
+      const toastStyle = document.createElement("style");
+      toastStyle.textContent = `
+            .toast {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: white;
+                padding: 1rem 1.5rem;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow-lg);
+                transform: translateY(100px);
+                opacity: 0;
+                transition: all 0.3s ease;
+                z-index: 10000;
+                border-left: 4px solid var(--success);
+                max-width: 300px;
+            }
+            .toast.show {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            .toast-warning { border-left-color: var(--warning); }
+            .toast-danger { border-left-color: var(--danger); }
+        `;
+      document.head.appendChild(toastStyle);
+
+      // Initialize progress circles
+      document.addEventListener("DOMContentLoaded", () => {
+        const circles = document.querySelectorAll(".fill");
+        circles.forEach((circle) => {
+          const percentage = parseInt(
+            circle.parentElement.nextElementSibling.textContent
+          );
+          const offset = 251.2 - (251.2 * percentage) / 100;
+          circle.style.strokeDashoffset = offset;
+        });
+      });
+    </script>
+  </body>
+</html>

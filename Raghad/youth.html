@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Youth Program – TechSphere Academy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+  <script src="forms-manager.js"></script>
+  <script>
+    // تهيئة إضافية للتأكد من عمل FormsManager
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("📋 الصفحة الرئيسية جاهزة");
+
+      setTimeout(() => {
+        if (window.FormsManager) {
+          console.log("✅ FormsManager متاح في window");
+          console.log(
+            "🛠️ اختبار FormsManager.getForms():",
+            FormsManager.getForms()
+          );
+        } else {
+          console.error("❌ FormsManager غير متاح في window");
+        }
+      }, 1000);
+    });
+  </script>
+</head>
+
+<body class="page-youth">
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <div class="container top-bar-inner">
+      <a href="youth.html" class="logo">
+        <img src="images/logo-1.jpeg" alt="TechSphere Academy Logo" />
+        <span>TechSphere</span>
+      </a>
+      <nav class="top-nav">
+        <a href="#about">About Us</a>
+        <a href="#programs">Programs</a>
+        <a href="#faq">FAQ</a>
+        <a href="profile.html">Profile</a>
+        <a href="#" class="btn-secondary" style="padding: 0.5rem 1rem">
+          <a href="../hamza/login-register/login.html"><i class="fas fa-sign-out-alt"></i> Log Out
+          </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-youth" id="hero">
+    <div class="container hero-inner">
+      <div class="hero-left">
+        <div class="hero-kicker">
+          <i class="fas fa-rocket"></i>
+          MASTER THE SKILLS THAT WILL SHAPE YOUR FUTURE
+        </div>
+        <h1>Build Your Tech Career with Confidence</h1>
+        <p class="hero-subtitle">
+          Join thousands of youth mastering cutting-edge technologies through
+          interactive quizzes, hands-on projects, and personalized learning
+          paths. Start your journey to becoming a tech leader today.
+        </p>
+        <div class="hero-actions">
+          <a href="#steps" class="btn btn-primary">
+            <i class="fas fa-play-circle"></i> Start Testing Now
+          </a>
+          <a href="#programs" class="btn btn-secondary">
+            <i class="fas fa-eye"></i> Explore Programs
+          </a>
+        </div>
+        <div class="hero-stats" style="display: flex; gap: 2rem; margin-top: 3rem">
+          <div class="stat">
+            <h3 style="font-size: 2rem; margin-bottom: 0.25rem">10,000+</h3>
+            <small>Active Learners</small>
+          </div>
+          <div class="stat">
+            <h3 style="font-size: 2rem; margin-bottom: 0.25rem">94%</h3>
+            <small>Success Rate</small>
+          </div>
+          <div class="stat">
+            <h3 style="font-size: 2rem; margin-bottom: 0.25rem">50+</h3>
+            <small>Expert Mentors</small>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-image-container">
+          <img src="images/hero2.png" alt="Youth collaborating on tech projects" class="hero-image" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps Section -->
+  <section class="steps-section" id="steps">
+    <div class="container">
+      <h2 class="section-title">Your Journey in 3 Simple Steps</h2>
+      <p class="section-subtitle">
+        Getting started with TechSphere Academy is easy. Follow these steps to
+        begin your tech learning journey.
+      </p>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <img src="images/step-1.png" alt="Choose program icon" />
+          <h3>Choose Your Program</h3>
+          <p>
+            Browse our carefully curated tech programs and select the one that
+            aligns with your interests and career goals. Each program is
+            designed to provide comprehensive learning in specific tech
+            domains.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <img src="images/step-2.png" alt="Read requirements icon" />
+          <h3>Take Assessment Quiz</h3>
+          <p>
+            Complete our interactive assessment quiz to evaluate your current
+            knowledge level. This helps us personalize your learning path and
+            ensure you start at the right difficulty level.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <img src="images/step-3.png" alt="Start application icon" />
+          <h3>Start Learning & Building</h3>
+          <p>
+            Begin your learning journey with guided tutorials, interactive
+            quizzes, and hands-on projects. Track your progress and earn
+            certifications as you master new skills.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About <b style="color: var(--primary)">TechSphere</b></h2>
+          <p>
+            We are a premier IT learning community dedicated to empowering
+            youth with cutting-edge technology skills. Our mission is to
+            bridge the gap between traditional education and industry
+            requirements by providing quick tests that prove your skills.
+          </p>
+          <p>
+            Founded by industry veterans from leading tech companies,
+            TechSphere uses expert knowledge to create transformative learning
+            experiences for the next generation of tech leaders.
+          </p>
+          <p>
+            Our curriculum is continuously updated to reflect the latest
+            industry trends, ensuring that our students gain skills that are
+            immediately valuable in the job market.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Expert Instructors</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10K+</span>
+              <span class="stat-label">Students Trained</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image">
+          <img src="images/about-us.png" alt="Students learning in modern tech lab" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Learn -->
+  <section class="section learn-section" id="programs" style="background: white; padding: 5rem 0">
+    <div class="container">
+      <h2 class="section-title">Master In-Demand Tech Skills</h2>
+      <p class="section-subtitle">
+        Choose from our comprehensive range of programs, each designed to
+        build practical skills through interactive quizzes and hands-on
+        projects.
+      </p>
+
+      <div class="learn-grid">
+        <!-- Web Development -->
+        <article class="learn-card">
+          <div class="card-header">
+            <img src="images/web.png" alt="Web development icon" />
+            <span class="category-badge web">Web Dev</span>
+          </div>
+          <h3>Full-Stack Web Development</h3>
+          <p>
+            Master modern web technologies including HTML5, CSS3, JavaScript,
+            React, and Node.js. Build responsive websites and full-stack
+            applications from scratch.
+          </p>
+          <div class="card-meta">
+            <span class="difficulty beginner">Beginner Friendly</span>
+            <span class="quiz-count">8 Quizzes</span>
+          </div>
+          <a href="all-forms.html" class="pill-btn">
+            <i class="fas fa-play"></i> Start Quiz
+          </a>
+        </article>
+
+        <!-- AI & Robotics -->
+        <article class="learn-card">
+          <div class="card-header">
+            <img src="images/robotics.png" alt="AI & Robotics icon" />
+            <span class="category-badge ai">AI/ML</span>
+          </div>
+          <h3>AI & Robotics Engineering</h3>
+          <p>
+            Dive into artificial intelligence, machine learning, and robotics
+            programming. Learn Python, TensorFlow, and build intelligent
+            systems.
+          </p>
+          <div class="card-meta">
+            <span class="difficulty intermediate">Intermediate</span>
+            <span class="quiz-count">10 Quizzes</span>
+          </div>
+          <a href="all-forms.html" class="pill-btn">
+            <i class="fas fa-play"></i> Start Quiz
+          </a>
+        </article>
+
+        <!-- Backend Development -->
+        <article class="learn-card">
+          <div class="card-header">
+            <img src="images/back.png" alt="Backend icon" />
+            <span class="category-badge backend">Backend</span>
+          </div>
+          <h3>Cloud & Backend Development</h3>
+          <p>
+            Learn server-side programming, databases, APIs, and cloud
+            deployment. Master technologies like Node.js, Python, MongoDB, and
+            AWS.
+          </p>
+          <div class="card-meta">
+            <span class="difficulty intermediate">Intermediate</span>
+            <span class="quiz-count">6 Quizzes</span>
+          </div>
+          <a href="all-forms.html" class="pill-btn">
+            <i class="fas fa-play"></i> Start Quiz
+          </a>
+        </article>
+
+        <!-- UI/UX Design -->
+        <article class="learn-card">
+          <div class="card-header">
+            <img src="images/design.png" alt="UI/UX icon" />
+            <span class="category-badge design">Design</span>
+          </div>
+          <h3>UI/UX & Product Design</h3>
+          <br />
+          <p>
+            Master user interface design, user experience research, and
+            prototyping. Learn Figma, design systems, and create stunning
+            digital experiences.
+          </p>
+          <div class="card-meta">
+            <span class="difficulty beginner">Beginner Friendly</span>
+            <span class="quiz-count">5 Quizzes</span>
+          </div>
+          <a href="#" class="pill-btn">
+            <i class="fas fa-play"></i> Start Quiz
+          </a>
+        </article>
+
+        <!-- React & Modern Frameworks -->
+        <article class="learn-card">
+          <div class="card-header">
+            <img src="images/react.png" alt="React icon" />
+            <span class="category-badge frameworks">Frameworks</span>
+          </div>
+          <h3>Modern JavaScript Frameworks</h3>
+          <p>
+            Master React, Vue.js, and Next.js. Build enterprise-grade
+            applications with modern tooling and best practices.
+          </p>
+          <div class="card-meta">
+            <span class="difficulty intermediate">Intermediate</span>
+            <span class="quiz-count">7 Quizzes</span>
+          </div>
+          <!-- في كل بطاقة -->
+          <a href="all-forms.html" class="pill-btn">
+            <i class="fas fa-play"></i> Start Quiz
+          </a>
+        </article>
+
+        <!-- Problem Solving -->
+        <article class="learn-card">
+          <div class="card-header">
+            <img src="images/problem.png" alt="Problem solving icon" />
+            <span class="category-badge problem">Logic</span>
+          </div>
+          <h3>Data Structures & Algorithms</h3>
+          <br />
+          <p>
+            Master problem-solving techniques and algorithmic thinking.
+            Prepare for technical interviews and competitive programming.
+          </p>
+          <div class="card-meta">
+            <span class="difficulty advanced">Advanced</span>
+            <span class="quiz-count">12 Quizzes</span>
+          </div>
+          <!-- في كل بطاقة -->
+          <a href="all-forms.html" class="pill-btn">
+            <i class="fas fa-play"></i> Start Quiz
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">
+        Find answers to common questions about our programs and learning
+        platform.
+      </p>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I need any previous experience?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p>
+                No previous experience is required for most beginner-level
+                programs. Our courses are designed to accommodate learners at
+                all levels, with clear learning paths for complete beginners.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I start a program?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p>
+                Simply choose your desired program from our offerings, take
+                the assessment quiz to determine your starting level, and
+                begin with the first module. All learning materials are
+                available immediately.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I register for multiple programs?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p>
+                Yes, you can enroll in multiple programs simultaneously. Our
+                platform allows you to switch between different learning
+                tracks and track your progress in each independently.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there any cost to join?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p>
+                We offer both free and premium programs. Basic access to
+                quizzes and learning materials is free, while premium programs
+                include additional features, projects, and mentorship.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What happens after completing a quiz?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p>
+                After completing a quiz, you'll receive immediate feedback on
+                your performance, detailed explanations for each question, and
+                recommendations for further learning based on your results.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer certificates?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p>
+                Yes, upon successful completion of any program, you'll receive
+                a verifiable digital certificate that you can share on
+                LinkedIn and include in your resume.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Start Your Tech Journey?</h2>
+        <p>
+          Join thousands of young developers building their future with
+          TechSphere Academy. Start with your first quiz today and take the
+          first step toward becoming a tech professional.
+        </p>
+        <div class="cta-buttons">
+          <a href="web-quiz.html" class="btn btn-primary" style="background: white; color: #667eea">
+            <i class="fas fa-code"></i> Try Web Dev Quiz
+          </a>
+          <a href="ai-quiz.html" class="btn btn-secondary">
+            <i class="fas fa-robot"></i> Try AI & Robotics Quiz
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="images/logo-1.jpeg" alt="TechSphere Academy Logo" />
+            <span>TechSphere Academy</span>
+          </div>
+          <p>
+            Empowering the next generation of tech leaders through interactive
+            learning, hands-on projects, and industry-relevant curriculum.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Learning Paths</h4>
+          <ul>
+            <li><a href="web-quiz.html">Web Development</a></li>
+            <li><a href="ai-quiz.html">AI & Robotics</a></li>
+            <li><a href="#">Backend Development</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Connect With Us</h4>
+          <div class="social-links" style="display: flex; gap: 1rem; margin-top: 1rem">
+            <a href="#" style="color: white; font-size: 1.5rem"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white; font-size: 1.5rem"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white; font-size: 1.5rem"><i class="fab fa-github"></i></a>
+            <a href="#" style="color: white; font-size: 1.5rem"><i class="fab fa-discord"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 TechSphere Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href");
+        if (targetId === "#") return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+
+    // Initialize animations on scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeInUp 0.8s ease-out forwards";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Observe all cards for animation
+    document
+      .querySelectorAll(".step-card, .learn-card, .faq-item")
+      .forEach((el) => {
+        observer.observe(el);
+      });
+  </script>
+  <!-- في نهاية youth.html قبل </body> -->
+  <script src="forms-manager.js"></script>
+  <script>
+    // اختبار FormsManager مباشرة في الصفحة
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("📋 الصفحة الرئيسية جاهزة");
+
+      // اختبار سريع بعد تحميل الصفحة
+      setTimeout(() => {
+        if (window.FormsManager) {
+          console.log("✅ FormsManager يعمل بشكل صحيح");
+          console.log("🔍 عدد النماذج:", FormsManager.getForms().length);
+        } else {
+          console.error("❌ FormsManager لم يتم تحميله");
+        }
+      }, 1500);
+    });
+  </script>
+</body>
+
+</html>
