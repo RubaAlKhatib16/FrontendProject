@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Using sample form:', currentForm);
             }
             
-            // تحديث واجهة النموذج
+           
             updateFormUI();
             
             // تهيئة إجابات المستخدم
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elements.formDescription.textContent = description;
         
         // تحديث الوقت
-        elements.formTime.textContent = `⏱️ ${currentForm.time || "10-15 min"}`;
+        elements.formTime.textContent = ` ${currentForm.time || "10-15 min"}`;
         
         // تحديث الصعوبة
         const difficulty = currentForm.difficulty || 2;
@@ -440,19 +440,14 @@ function updateResultsUI(score, totalPoints, bananasEarned, percentage, question
     
     if (percentage >= 90) {
         message = "Excellent! You're a genius!";
-        emoji = "🎯";
     } else if (percentage >= 70) {
         message = "Great job! You're doing amazing!";
-        emoji = "⭐";
     } else if (percentage >= 50) {
         message = "Good work! Keep practicing!";
-        emoji = "💪";
     } else if (percentage > 0) {
         message = "Nice try! Practice makes perfect!";
-        emoji = "🌱";
     } else {
         message = "Let's try again! You can do it!";
-        emoji = "🔄";
     }
     
     elements.resultMessage.textContent = `${emoji} ${message}`;
@@ -462,7 +457,7 @@ function updateResultsUI(score, totalPoints, bananasEarned, percentage, question
     resultsDetails.className = 'results-details';
     resultsDetails.innerHTML = `
         <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
-            <h4 style="margin-bottom: 10px; color: #6e3c14;">📋 Results Breakdown:</h4>
+            <h4 style="margin-bottom: 10px; color: #6e3c14;">Results Breakdown:</h4>
             ${questionResults.map((result, index) => {
                 const question = currentForm.questions[index];
                 return `

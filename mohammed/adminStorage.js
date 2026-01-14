@@ -2,8 +2,7 @@
 const AdminStorage = {
     // مفاتيح التخزين
     KIDS_FORMS_KEY: 'monkeyITKids_forms_kids',
-    
-    // تهيئة نماذج افتراضية للأطفال
+  
     defaultKidsForms: [
         {
             id: 1,

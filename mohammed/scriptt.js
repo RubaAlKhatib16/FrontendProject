@@ -857,9 +857,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <p>${form.description}</p>
                     <div class="preview-meta">
-                        <span>⏱️ ${form.time}</span>
-                        <span>⭐ Difficulty: ${form.difficulty || 2}/5</span>
-                        <span>📊 ${form.questions.length} questions</span>
+                        <span>${form.time}</span>
+                        <span> Difficulty: ${form.difficulty || 2}/5</span>
+                        <span> ${form.questions.length} questions</span>
                     </div>
                     <div class="preview-questions">
                         ${form.questions.map((q, i) => `
